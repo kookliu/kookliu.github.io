@@ -44,6 +44,8 @@
   
     
     
+        <link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+    
 
 </head>
 
@@ -321,10 +323,9 @@
   <section id="comments">
   	
        
-    <div id="disqus_thread">
-        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-    </div>
 
+
+    
     
   </section>
 
@@ -470,21 +471,24 @@ window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
     
         
     
-    <script defer>
-    var disqus_config = function () {
-        
-            this.page.url = 'http://blog.jiazhe.space/2018/08/13/1st-Article/';
-        
-        this.page.identifier = '1st-Article';
-    };
-    (function() { 
-        var d = document, s = d.createElement('script');  
-        s.src = '//' + 'kookliu' + '.disqus.com/embed.js';
-        s.setAttribute('data-timestamp', +new Date());
-        (d.head || d.body).appendChild(s);
-    })();
+<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+<script>
+var gitment = new Gitment({
+  // id默认为当前页面url，如果url后带参数或锚点，gitment要重新初始化
+  // https://github.com/imsun/gitment/issues/55
+  // 解决方案：id:window.location.pathname,或者将id设置为当前页面标题
+  id: '重新开始', 
+  owner: 'kookliu', // 可以是你的GitHub用户名，也可以是github id
+  repo: 'kookliu.github.io',
+  oauth: {
+    client_id: '',
+    client_secret: '',
+  }
+})
+gitment.render('comments')
 </script>
 
+   
 
     
     
