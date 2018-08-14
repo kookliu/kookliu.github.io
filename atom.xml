@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://blog.jiazhe.space/"/>
-  <updated>2018-08-14T01:50:05.000Z</updated>
+  <updated>2018-08-14T02:06:34.000Z</updated>
   <id>http://blog.jiazhe.space/</id>
   
   <author>
@@ -21,20 +21,24 @@
     <link href="http://blog.jiazhe.space/2018/08/14/aboutme/"/>
     <id>http://blog.jiazhe.space/2018/08/14/aboutme/</id>
     <published>2018-08-14T01:28:45.000Z</published>
-    <updated>2018-08-14T01:50:05.000Z</updated>
+    <updated>2018-08-14T02:06:34.000Z</updated>
     
-    <content type="html"><![CDATA[<p>测试分类项</p>]]></content>
+    <content type="html"><![CDATA[<p>测试分类项，看看文章分类</p>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;p&gt;测试分类项&lt;/p&gt;
+        &lt;p&gt;测试分类项，看看文章分类&lt;/p&gt;
 
       
     
     </summary>
     
+      <category term="随笔落字" scheme="http://blog.jiazhe.space/categories/%E9%9A%8F%E7%AC%94%E8%90%BD%E5%AD%97/"/>
+    
+    
+      <category term="随笔" scheme="http://blog.jiazhe.space/tags/%E9%9A%8F%E7%AC%94/"/>
     
   </entry>
   
