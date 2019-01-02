@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://blog.jiazhe.space/"/>
-  <updated>2019-01-02T02:20:19.306Z</updated>
+  <updated>2019-01-02T02:22:19.118Z</updated>
   <id>http://blog.jiazhe.space/</id>
   
   <author>
@@ -21,16 +21,17 @@
     <link href="http://blog.jiazhe.space/2018/09/18/aws-cmd/"/>
     <id>http://blog.jiazhe.space/2018/09/18/aws-cmd/</id>
     <published>2018-09-18T07:59:32.000Z</published>
-    <updated>2019-01-02T02:20:19.306Z</updated>
+    <updated>2019-01-02T02:22:19.118Z</updated>
     
-    <content type="html"><![CDATA[<p>简单了解一下Mac的AWS的配置方法：<br>测试一下文章</p>]]></content>
+    <content type="html"><![CDATA[<p>简单了解一下Mac的AWS的配置方法：<br>测试一下文章<br>添加一些</p>]]></content>
     
     <summary type="html">
     
       
       
         &lt;p&gt;简单了解一下Mac的AWS的配置方法：&lt;br&gt;
-测试一下文章&lt;/p&gt;
+测试一下文章&lt;br&gt;
+添加一些&lt;/p&gt;
 
       
     
