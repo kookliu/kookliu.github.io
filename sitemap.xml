@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://blog.jiazhe.space/2018/09/18/aws-cmd/</loc>
+    
+    <lastmod>2019-01-09T07:30:01.552Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://blog.jiazhe.space/2018/08/14/Cmd-Markdown-edit/</loc>
     
     <lastmod>2019-01-07T14:21:08.454Z</lastmod>
@@ -12,13 +19,6 @@
     <loc>http://blog.jiazhe.space/2018/08/14/aboutme/</loc>
     
     <lastmod>2019-01-04T07:44:06.612Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://blog.jiazhe.space/2018/09/18/aws-cmd/</loc>
-    
-    <lastmod>2019-01-02T02:22:19.118Z</lastmod>
     
   </url>
   
