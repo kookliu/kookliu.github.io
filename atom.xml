@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://blog.jiazhe.space/"/>
-  <updated>2019-01-09T07:30:01.552Z</updated>
+  <updated>2019-05-17T15:23:57.333Z</updated>
   <id>http://blog.jiazhe.space/</id>
   
   <author>
@@ -17,11 +17,36 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>newtest</title>
+    <link href="http://blog.jiazhe.space/2019/05/17/newtest/"/>
+    <id>http://blog.jiazhe.space/2019/05/17/newtest/</id>
+    <published>2019-05-17T15:22:30.000Z</published>
+    <updated>2019-05-17T15:23:57.333Z</updated>
+    
+    <content type="html"><![CDATA[<p>这周过的还算充实，将VFX Studio的基本在AWS上的使用大概调通了。基本涵盖这样几个方面？</p><p>1：DCV的Linux/Windows的云上实现。<br>2：云上云下的数据打通方案。<br>3：Deadline环境的基本搭建。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;这周过的还算充实，将VFX Studio的基本在AWS上的使用大概调通了。基本涵盖这样几个方面？&lt;/p&gt;
+&lt;p&gt;1：DCV的Linux/Windows的云上实现。&lt;br&gt;
+2：云上云下的数据打通方案。&lt;br&gt;
+3：Deadline环境的基本搭建。&lt;/p&gt;
+
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
     <title>AWS的CLI入门</title>
     <link href="http://blog.jiazhe.space/2018/09/18/aws-cmd/"/>
     <id>http://blog.jiazhe.space/2018/09/18/aws-cmd/</id>
     <published>2018-09-18T07:59:32.000Z</published>
-    <updated>2019-01-09T07:30:01.552Z</updated>
+    <updated>2019-05-17T15:21:24.232Z</updated>
     
     <content type="html"><![CDATA[<p>简单了解一下Mac的AWS的配置方法：</p><p>研究一下这东西的写法。<br>换行了吗？</p>]]></content>
     
