@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://blog.jiazhe.space/"/>
-  <updated>2019-05-17T15:23:57.333Z</updated>
+  <updated>2019-01-07T14:21:08.454Z</updated>
   <id>http://blog.jiazhe.space/</id>
   
   <author>
@@ -15,59 +15,6 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
-  
-  <entry>
-    <title>newtest</title>
-    <link href="http://blog.jiazhe.space/2019/05/17/newtest/"/>
-    <id>http://blog.jiazhe.space/2019/05/17/newtest/</id>
-    <published>2019-05-17T15:22:30.000Z</published>
-    <updated>2019-05-17T15:23:57.333Z</updated>
-    
-    <content type="html"><![CDATA[<p>这周过的还算充实，将VFX Studio的基本在AWS上的使用大概调通了。基本涵盖这样几个方面？</p><p>1：DCV的Linux/Windows的云上实现。<br>2：云上云下的数据打通方案。<br>3：Deadline环境的基本搭建。</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;这周过的还算充实，将VFX Studio的基本在AWS上的使用大概调通了。基本涵盖这样几个方面？&lt;/p&gt;
-&lt;p&gt;1：DCV的Linux/Windows的云上实现。&lt;br&gt;
-2：云上云下的数据打通方案。&lt;br&gt;
-3：Deadline环境的基本搭建。&lt;/p&gt;
-
-      
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>AWS的CLI入门</title>
-    <link href="http://blog.jiazhe.space/2018/09/18/aws-cmd/"/>
-    <id>http://blog.jiazhe.space/2018/09/18/aws-cmd/</id>
-    <published>2018-09-18T07:59:32.000Z</published>
-    <updated>2019-05-17T15:21:24.232Z</updated>
-    
-    <content type="html"><![CDATA[<p>简单了解一下Mac的AWS的配置方法：</p><p>研究一下这东西的写法。<br>换行了吗？</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;简单了解一下Mac的AWS的配置方法：&lt;/p&gt;
-&lt;p&gt;研究一下这东西的写法。&lt;br&gt;
-换行了吗？&lt;/p&gt;
-
-      
-    
-    </summary>
-    
-      <category term="AWS" scheme="http://blog.jiazhe.space/categories/AWS/"/>
-    
-    
-      <category term="AWS" scheme="http://blog.jiazhe.space/tags/AWS/"/>
-    
-  </entry>
   
   <entry>
     <title>Cmd-Markdown-edit</title>
@@ -90,57 +37,6 @@
     </summary>
     
       <category term="基础学习" scheme="http://blog.jiazhe.space/categories/%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>aboutme</title>
-    <link href="http://blog.jiazhe.space/2018/08/14/aboutme/"/>
-    <id>http://blog.jiazhe.space/2018/08/14/aboutme/</id>
-    <published>2018-08-14T01:28:45.000Z</published>
-    <updated>2019-01-04T07:44:06.612Z</updated>
-    
-    <content type="html"><![CDATA[<p>测试分类项，看看文章分类<br>都是啥呢</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;测试分类项，看看文章分类&lt;br&gt;
-都是啥呢&lt;/p&gt;
-
-      
-    
-    </summary>
-    
-      <category term="随笔落字" scheme="http://blog.jiazhe.space/categories/%E9%9A%8F%E7%AC%94%E8%90%BD%E5%AD%97/"/>
-    
-    
-      <category term="随笔" scheme="http://blog.jiazhe.space/tags/%E9%9A%8F%E7%AC%94/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>重新开写</title>
-    <link href="http://blog.jiazhe.space/2018/08/13/1st-Article/"/>
-    <id>http://blog.jiazhe.space/2018/08/13/1st-Article/</id>
-    <published>2018-08-13T08:26:13.000Z</published>
-    <updated>2018-08-14T14:33:12.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>曾经写了一个博客，10年的东西。放在国外的一个Host那里，结果关站都没有通知一下。东西丢了。<br>已经3年不再写了，发现不输出，就无法真正的掌握一些东西。所以重头来过了。<br>这个博客是github上用hexo写的。发现挺好的。有这样开始吧。</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;曾经写了一个博客，10年的东西。放在国外的一个Host那里，结果关站都没有通知一下。东西丢了。&lt;br&gt;
-已经3年不再写了，发现不输出，就无法真正的掌握一些东西。所以重头来过了。&lt;br&gt;
-这个博客是github上用hexo写的。发现挺好的。有这样开始吧。&lt;/p&gt;
-
-      
-    
-    </summary>
     
     
   </entry>
