@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://blog.jiazhe.space/2018/08/12/hello-world/</loc>
+    
+    <lastmod>2019-05-22T10:06:16.669Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://blog.jiazhe.space/categories/index.html</loc>
     
     <lastmod>2019-05-22T09:09:27.008Z</lastmod>
@@ -47,13 +54,6 @@
     <loc>http://blog.jiazhe.space/about/index.html</loc>
     
     <lastmod>2018-08-14T01:24:36.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://blog.jiazhe.space/2018/08/12/hello-world/</loc>
-    
-    <lastmod>2018-08-12T13:22:30.000Z</lastmod>
     
   </url>
   
