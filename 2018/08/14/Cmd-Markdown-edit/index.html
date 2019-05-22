@@ -244,23 +244,27 @@
 <p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>E</mi><mo>=</mo><mi>m</mi><msup><mi>c</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">E=mc^2
 </annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.8641079999999999em;"></span><span class="strut bottom" style="height:0.8641079999999999em;vertical-align:0em;"></span><span class="base displaystyle textstyle uncramped"><span class="mord mathit" style="margin-right:0.05764em;">E</span><span class="mrel">=</span><span class="mord mathit">m</span><span class="mord"><span class="mord mathit">c</span><span class="vlist"><span style="top:-0.413em;margin-right:0.05em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle uncramped"><span class="mord mathrm">2</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span></span></span></span></span></p>
 <h3 id="3-高亮一段代码"><a class="markdownIt-Anchor" href="#3-高亮一段代码"></a> 3. 高亮一段代码<sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup></h3>
+<p class="code-caption" data-lang="python" data-line_number="frontend" data-trim_indent="backend" data-label_position="outer" data-labels_left="Code" data-labels_right=":" data-labels_copy="Copy Code"><span class="code-caption-label"></span><a class="code-caption-copy">Copy Code</a></p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@requires_authorization</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">SomeClass</span>:</span></span><br><span class="line">    <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    <span class="comment"># A comment</span></span><br><span class="line">    <span class="keyword">print</span> <span class="string">'hello world'</span></span><br></pre></td></tr></table></figure>
 <h3 id="4-高效绘制-流程图"><a class="markdownIt-Anchor" href="#4-高效绘制-流程图"></a> 4. 高效绘制 <a href="https://www.zybuluo.com/mdeditor?url=https://www.zybuluo.com/static/editor/md-help.markdown#7-%E6%B5%81%E7%A8%8B%E5%9B%BE" target="_blank" rel="noopener">流程图</a></h3>
-<pre class="mermaid"> graph LR;
-    开始-->条件B;
-    条件A-->条件C;
-    条件B-->条件D;
-    条件C-->条件D;
-    条件A-->条件D;
-    开始-->条件C;
-    开始-->条件A;
-    条件D-->结束;</pre>
+<p class="code-caption" data-lang="mermaid" data-line_number="frontend" data-trim_indent="backend" data-label_position="outer" data-labels_left="Code" data-labels_right=":" data-labels_copy="Copy Code"><span class="code-caption-label"></span><a class="code-caption-copy">Copy Code</a></p>
+<pre class="mermaid">graph LR;
+   开始-->条件B;
+   条件A-->条件C;
+   条件B-->条件D;
+   条件C-->条件D;
+   条件A-->条件D;
+   开始-->条件C;
+   开始-->条件A;
+   条件D-->结束;</pre>
 <h3 id="5-高效绘制-序列图"><a class="markdownIt-Anchor" href="#5-高效绘制-序列图"></a> 5. 高效绘制 <a href="https://www.zybuluo.com/mdeditor?url=https://www.zybuluo.com/static/editor/md-help.markdown#8-%E5%BA%8F%E5%88%97%E5%9B%BE" target="_blank" rel="noopener">序列图</a></h3>
+<p class="code-caption" data-lang="mermaid" data-line_number="frontend" data-trim_indent="backend" data-label_position="outer" data-labels_left="Code" data-labels_right=":" data-labels_copy="Copy Code"><span class="code-caption-label"></span><a class="code-caption-copy">Copy Code</a></p>
 <pre class="mermaid">sequenceDiagram
 Alice->Bob: Hello Bob, how are you?
 Note right of Bob: Bob thinks
 Bob-->Alice: I am good thanks!</pre>
 <h3 id="6-高效绘制-甘特图"><a class="markdownIt-Anchor" href="#6-高效绘制-甘特图"></a> 6. 高效绘制 <a href="https://www.zybuluo.com/mdeditor?url=https://www.zybuluo.com/static/editor/md-help.markdown#9-%E7%94%98%E7%89%B9%E5%9B%BE" target="_blank" rel="noopener">甘特图</a></h3>
+<p class="code-caption" data-lang="mermaid" data-line_number="frontend" data-trim_indent="backend" data-label_position="outer" data-labels_left="Code" data-labels_right=":" data-labels_copy="Copy Code"><span class="code-caption-label"></span><a class="code-caption-copy">Copy Code</a></p>
 <pre class="mermaid">gantt
     title 项目开发流程
     section 项目确定
