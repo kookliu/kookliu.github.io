@@ -17,18 +17,21 @@
   <meta http-equiv="window-target" content="_top" />
   
   
-  <title>categories | Hexo</title>
-  <meta name="keywords" content="Linux VMware AWS Redhat SuSE">
-<meta property="og:type" content="website">
-<meta property="og:title" content="categories">
-<meta property="og:url" content="http://blog.jiazhe.space/categories/index.html">
+  <title>CloudFormation - How to get AMI ID? | Hexo</title>
+  <meta name="description" content="CloudFormation -  如何获取AWS的AMI ID？ 目前正在做CloudFormation的一些工作相关内容，Hong Kong Region是新开的Region，所以Global的一般提供的QuickStart里面的AMI Mapping都没有HK的内容。所以需要提取一下Hong Kong的内容。 概述：AMI ID是依据Owner去分类的，默认情况下分为amazon,aws-">
+<meta name="keywords" content="CloudFormation">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CloudFormation - How to get AMI ID?">
+<meta property="og:url" content="http://blog.jiazhe.space/2019/05/17/CloudFormation - How to get AMI ID/index.html">
 <meta property="og:site_name" content="JIA&#39;s BLOG">
+<meta property="og:description" content="CloudFormation -  如何获取AWS的AMI ID？ 目前正在做CloudFormation的一些工作相关内容，Hong Kong Region是新开的Region，所以Global的一般提供的QuickStart里面的AMI Mapping都没有HK的内容。所以需要提取一下Hong Kong的内容。 概述：AMI ID是依据Owner去分类的，默认情况下分为amazon,aws-">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-08-14T00:08:33.000Z">
+<meta property="og:updated_time" content="2019-05-22T05:14:57.459Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="categories">
+<meta name="twitter:title" content="CloudFormation - How to get AMI ID?">
+<meta name="twitter:description" content="CloudFormation -  如何获取AWS的AMI ID？ 目前正在做CloudFormation的一些工作相关内容，Hong Kong Region是新开的Region，所以Global的一般提供的QuickStart里面的AMI Mapping都没有HK的内容。所以需要提取一下Hong Kong的内容。 概述：AMI ID是依据Owner去分类的，默认情况下分为amazon,aws-">
   <!-- Canonical links -->
-  <link rel="canonical" href="http://blog.jiazhe.space/categories/index.html">
+  <link rel="canonical" href="http://blog.jiazhe.space/2019/05/17/CloudFormation - How to get AMI ID/index.html">
   
     <link rel="alternate" href="/atom.xml" title="JIA&#39;s BLOG" type="application/atom+xml">
   
@@ -39,6 +42,8 @@
   <!-- <link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"> -->
   <link rel="stylesheet" href="/css/style.css">
   
+    
+        <link href="https://cdn.bootcss.com/KaTeX/0.7.1/katex.min.css" rel="stylesheet">
     
     
         <link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
@@ -268,14 +273,14 @@
   
 <main class="main" role="main">
   <div class="content">
-  <article id="page-" class="article article-type-page" itemscope itemtype="http://schema.org/BlogPosting">
+  <article id="post-CloudFormation - How to get AMI ID" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
     
     <div class="article-header">
       
         
   
     <h1 class="article-title" itemprop="name">
-      categories
+      CloudFormation - How to get AMI ID?
     </h1>
   
 
@@ -283,12 +288,22 @@
       <div class="article-meta">
         <span class="article-date">
     <i class="icon icon-calendar-check"></i>
-	<a href="/categories/index.html" class="article-date">
-	  <time datetime="2018-08-14T00:08:33.000Z" itemprop="datePublished">2018-08-14</time>
+	<a href="/2019/05/17/CloudFormation - How to get AMI ID/" class="article-date">
+	  <time datetime="2019-05-17T13:45:05.391Z" itemprop="datePublished">2019-05-17</time>
 	</a>
 </span>
         
+  <span class="article-category">
+    <i class="icon icon-folder"></i>
+    <a class="article-category-link" href="/categories/CloudFormation/">CloudFormation</a>
+  </span>
+
         
+  <span class="article-tag">
+    <i class="icon icon-tags"></i>
+	<a class="article-tag-link" href="/tags/CloudFormation/">CloudFormation</a>
+  </span>
+
 
         
 	<span class="article-read hidden-xs">
@@ -299,13 +314,53 @@
 	</span>
 
 
-        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/categories/index.html#comments" class="article-comment-link">Comments</a></span>
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2019/05/17/CloudFormation - How to get AMI ID/#comments" class="article-comment-link">Comments</a></span>
         
       </div>
     </div>
     <div class="article-entry markdown-body" itemprop="articleBody">
       
-        
+        <h1 id="cloudformation-如何获取aws的ami-id"><a class="markdownIt-Anchor" href="#cloudformation-如何获取aws的ami-id"></a> CloudFormation -  如何获取AWS的AMI ID？</h1>
+<p>目前正在做CloudFormation的一些工作相关内容，Hong Kong Region是新开的Region，所以Global的一般提供的QuickStart里面的AMI Mapping都没有HK的内容。所以需要提取一下Hong Kong的内容。</p>
+<p>概述：AMI ID是依据Owner去分类的，默认情况下分为amazon,aws-marketplace,microsoft,所以这里要注意你的AMI是属于哪个Owner下的。</p>
+<p>一：获取一下AMI的名字</p>
+<p>注意，Owner分别以amazon和aws-marketplace的输出信息</p>
+<p>`bogon:aws-kp jialj$ aws --profile hk  ec2 describe-images --owners amazon --filters “Name=name,Values=ubuntu*” --query ‘sort_by(Images, &amp;CreationDate)[].Name’</p>
+<p>[</p>
+<p>​    “ubuntu-bionic-18.04-amd64-server-20180522-dotnetcore-2018.07.11”,</p>
+<p>​    “ubuntu-xenial-16.04-amd64-server-20180306-SQL_2017_Express-2018.04.10”,</p>
+<p>​    “ubuntu-xenial-16.04-amd64-server-20180306-SQL_2017_Web-2018.04.10”,</p>
+<p>​    “ubuntu-xenial-16.04-amd64-server-20180306-SQL_2017_Standard-2018.04.10”,</p>
+<p>​    “ubuntu-xenial-16.04-amd64-server-20180306-SQL_2017_Enterprise-2018.04.10”,</p>
+<p>​    “ubuntu-xenial-16.04-amd64-server-20190212-SQL_2017_Enterprise-2019.04.02”,</p>
+<p>​    “ubuntu-xenial-16.04-amd64-server-20190212-SQL_2017_Express-2019.04.02”,</p>
+<p>​    “ubuntu-xenial-16.04-amd64-server-20190212-SQL_2017_Standard-2019.04.02”,</p>
+<p>​    “ubuntu-xenial-16.04-amd64-server-20190212-SQL_2017_Web-2019.04.02”</p>
+<p>]</p>
+<p>bogon:aws-kp jialj$ aws --profile hk  ec2 describe-images --owners aws-marketplace --filters “Name=name,Values=ubuntu*” --query ‘sort_by(Images, &amp;CreationDate)[].Name’</p>
+<p>[</p>
+<p>​    “ubuntu-18.04-VE6.0.1r5-1-1e5137b8-671e-41cc-b8d3-9c2b49256285-ami-02b04c73754e39143.4”,</p>
+<p>​    “ubuntu-18.04-VC6.1.1-1-3b49f79c-3119-4843-87fa-1913bbfd0734-ami-01e67bda7e5b22917.4”,</p>
+<p>​    “ubuntu-18.04-VAC3.8.1-1-66afc72d-1cbd-47e1-82f5-2cb033e6b72b-ami-0e77341461ea68812.4”,</p>
+<p>​    “ubuntu-16.04-VC4.1.10-1-62ab724f-833e-4666-99d0-21e3ec7ad743-ami-0a2ef36dad6e99237.4”,</p>
+<p>​    “ubuntu-14.04-VCP4.1.10r6-1-5dfb4110-fc9c-4c64-9551-6b9283cd47ef-ami-02db394d7c4de1e1c.4”,</p>
+<p>​    “ubuntu-18.04-VCS6.0.1-1-e7fe31ca-ada8-4e55-8fec-fb5b03dc7ef8-ami-08cb6ed9610ed5802.4”,</p>
+<p>​    “ubuntu-16.04__KNIME_Server_4.7.2-SRV-4.7.2-2018-09-06-17ecdb3d-6740-419f-b825-bf418bba360d-ami-03ac37929efc450b5.4”,</p>
+<p>​    “ubuntu-16.04__KNIME_Server_4.7.2-SRV-4.7.2-byol-2018-09-06-c96b84cf-13e0-4a4b-a371-167af56c3e94-ami-0ec9137c74a0a54ff.4”,</p>
+<p>​    “ubuntu-16.04__KNIME_Server_small_4.7.3-SRV-4.7.3-2018-11-15-5deef161-954a-4b84-9285-e76ab409e2e7-ami-0a354008ae2f6ada5.4”,</p>
+<p>​    “ubuntu-pio-0.2.2-45fa7f6f-a9ed-48e0-8017-c4e89711a22c-ami-3c98f343.4”,</p>
+<p>​    “ubuntu/images/hvm-ssd/ubuntu-disco-19.04-arm64-server-20190417-d1a42a4a-e17d-4d2b-91f3-8f55643a7fd9-ami-00261a6a6a8290d46.4”,</p>
+<p>​    “ubuntu/images/hvm-ssd/ubuntu-trusty-14.04-amd64-server-20190429-bb634ce9-ed92-47ac-a3dc-66e8ab3aaf75-ami-0bc0814ce7c141032.4”,</p>
+<p>​    “ubuntu-minimal/images/hvm-ssd/ubuntu-bionic-18.04-amd64-minimal-201-0641ddeb-4f55-4c19-a94b-5c409a5e0164-ami-0304b46b71888b817.4”,</p>
+<p>​    “ubuntu/images/hvm-ssd/ubuntu-bionic-18.04-amd64-server-20190514-3b73ef49-208f-47e1-8a6e-4ae768d8a333-ami-024a64a6685d05041.4”,</p>
+<p>​    “ubuntu/images/hvm-ssd/ubuntu-cosmic-18.10-amd64-server-20190514-6dc2bdb9-c084-41f0-9949-d762044b4e40-ami-0cfb1692986ab3a84.4”,</p>
+<p>​    “ubuntu/images/hvm-ssd/ubuntu-disco-19.04-amd64-server-20190514-7f42d8d0-b1f1-46be-9fb5-50ce0f1a4e67-ami-08ab45c4343f5f5c6.4”,</p>
+<p>​    “ubuntu-minimal/images/hvm-ssd/ubuntu-cosmic-18.10-amd64-minimal-201-c040a41e-90ce-489f-8a6c-5a576b56756e-ami-0b7e0f7d70c03333a.4”,</p>
+<p>​    “ubuntu/images/hvm-ssd/ubuntu-xenial-16.04-amd64-server-20190514-d83d0782-cb94-46d7-8993-f4ce15d1a484-ami-07b4156579ea1d7ba.4”,</p>
+<p>​    “ubuntu-minimal/images/hvm-ssd/ubuntu-xenial-16.04-amd64-minimal-201-d88fb28e-20e8-4254-8147-30cac1406e6e-ami-04564bfadb4d806a2.4”,</p>
+<p>​    “ubuntu-minimal/images/hvm-ssd/ubuntu-disco-19.04-amd64-minimal-2019-2c31cc1c-94d4-400f-96ba-1e7ae4701a2a-ami-0e24a536dc1d8f8ae.4”</p>
+<p>]`</p>
+
       
     </div>
     <div class="article-footer">
@@ -314,7 +369,7 @@
     
     <li class="post-copyright-link hidden-xs">
       <strong>本文链接：</strong>
-      <a href="http://blog.jiazhe.space/categories/index.html" title="categories" target="_blank" rel="external">http://blog.jiazhe.space/categories/index.html</a>
+      <a href="http://blog.jiazhe.space/2019/05/17/CloudFormation - How to get AMI ID/" title="CloudFormation - How to get AMI ID?" target="_blank" rel="external">http://blog.jiazhe.space/2019/05/17/CloudFormation - How to get AMI ID/</a>
     </li>
     
     
@@ -358,6 +413,16 @@
 
   <nav class="bar bar-footer clearfix" data-stick-bottom>
   <div class="bar-inner">
+  
+  <ul class="pager pull-left">
+    
+    
+    <li class="next">
+      <a href="/2018/08/14/Cmd-Markdown-edit/" title="Cmd-Markdown-edit"><span>Older&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
+    </li>
+    
+    
+  </ul>
   
   
   <!-- Button trigger modal -->
@@ -483,6 +548,12 @@ window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
 
     
     
+        
+<script defer src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+    
     
         
     
@@ -492,7 +563,7 @@ var gitment = new Gitment({
   // id默认为当前页面url，如果url后带参数或锚点，gitment要重新初始化
   // https://github.com/imsun/gitment/issues/55
   // 解决方案：id:window.location.pathname,或者将id设置为当前页面标题
-  id: 'categories', 
+  id: 'CloudFormation - How to get AMI ID?', 
   owner: 'kookliu', // 可以是你的GitHub用户名，也可以是github id
   repo: 'kookliu.github.io',
   oauth: {
