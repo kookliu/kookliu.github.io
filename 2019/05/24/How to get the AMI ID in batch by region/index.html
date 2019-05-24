@@ -19,21 +19,21 @@
   <meta name="google-site-verification" content="LrwD62uNl-hBIAWd4hlzKeN4WR51HNulZihO_EL3A_A" />
   
   
-  <title>Hello World | Hexo</title>
-  <meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.  Quic">
-<meta name="keywords" content="Linux VMware AWS Redhat SuSE">
+  <title>如何以Region来批处理获取AMI ID？ | Hexo</title>
+  <meta name="description" content="这个其实也是为CloudFormation服务的，就是为了批处理获取。 使用方法如下： 1：一个参数文件，通过上一篇文章进行获取。其实就是AMI的列表清单。 2：直接执行脚本调用，加上参数文件。 具体效果如下，如您所见 123456789101112131415161718192021222324252627282930313233343536373839bogon:aws-kp jialj$ .">
+<meta name="keywords" content="CloudFormation">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="http://blog.jiazhe.space/2018/08/12/hello-world/index.html">
+<meta property="og:title" content="如何以Region来批处理获取AMI ID？">
+<meta property="og:url" content="http://blog.jiazhe.space/2019/05/24/How to get the AMI ID in batch by region/index.html">
 <meta property="og:site_name" content="JIA&#39;s BLOG">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.  Quic">
+<meta property="og:description" content="这个其实也是为CloudFormation服务的，就是为了批处理获取。 使用方法如下： 1：一个参数文件，通过上一篇文章进行获取。其实就是AMI的列表清单。 2：直接执行脚本调用，加上参数文件。 具体效果如下，如您所见 123456789101112131415161718192021222324252627282930313233343536373839bogon:aws-kp jialj$ .">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-05-22T10:16:36.960Z">
+<meta property="og:updated_time" content="2019-05-24T11:42:53.111Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hello World">
-<meta name="twitter:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.  Quic">
+<meta name="twitter:title" content="如何以Region来批处理获取AMI ID？">
+<meta name="twitter:description" content="这个其实也是为CloudFormation服务的，就是为了批处理获取。 使用方法如下： 1：一个参数文件，通过上一篇文章进行获取。其实就是AMI的列表清单。 2：直接执行脚本调用，加上参数文件。 具体效果如下，如您所见 123456789101112131415161718192021222324252627282930313233343536373839bogon:aws-kp jialj$ .">
   <!-- Canonical links -->
-  <link rel="canonical" href="http://blog.jiazhe.space/2018/08/12/hello-world/index.html">
+  <link rel="canonical" href="http://blog.jiazhe.space/2019/05/24/How to get the AMI ID in batch by region/index.html">
   
     <link rel="alternate" href="/atom.xml" title="JIA&#39;s BLOG" type="application/atom+xml">
   
@@ -44,6 +44,8 @@
   <!-- <link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"> -->
   <link rel="stylesheet" href="/css/style.css">
   
+    
+        <link href="https://cdn.bootcss.com/KaTeX/0.7.1/katex.min.css" rel="stylesheet">
     
     
         <link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
@@ -298,14 +300,14 @@
   
 <main class="main" role="main">
   <div class="content">
-  <article id="post-hello-world" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+  <article id="post-How to get the AMI ID in batch by region" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
     
     <div class="article-header">
       
         
   
     <h1 class="article-title" itemprop="name">
-      Hello World
+      如何以Region来批处理获取AMI ID？
     </h1>
   
 
@@ -313,12 +315,22 @@
       <div class="article-meta">
         <span class="article-date">
     <i class="icon icon-calendar-check"></i>
-	<a href="/2018/08/12/hello-world/" class="article-date">
-	  <time datetime="2018-08-12T13:22:30.000Z" itemprop="datePublished">2018-08-12</time>
+	<a href="/2019/05/24/How to get the AMI ID in batch by region/" class="article-date">
+	  <time datetime="2019-05-24T11:31:32.854Z" itemprop="datePublished">2019-05-24</time>
 	</a>
 </span>
         
+  <span class="article-category">
+    <i class="icon icon-folder"></i>
+    <a class="article-category-link" href="/categories/Automation/">Automation</a>
+  </span>
+
         
+  <span class="article-tag">
+    <i class="icon icon-tags"></i>
+	<a class="article-tag-link" href="/tags/CloudFormation/">CloudFormation</a>
+  </span>
+
 
         
 	<span class="article-read hidden-xs">
@@ -329,27 +341,22 @@
 	</span>
 
 
-        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2018/08/12/hello-world/#comments" class="article-comment-link">Comments</a></span>
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2019/05/24/How to get the AMI ID in batch by region/#comments" class="article-comment-link">Comments</a></span>
         
       </div>
     </div>
     <div class="article-entry markdown-body" itemprop="articleBody">
       
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="quick-start"><a class="markdownIt-Anchor" href="#quick-start"></a> Quick Start</h2>
-<h3 id="create-a-new-post"><a class="markdownIt-Anchor" href="#create-a-new-post"></a> Create a new post</h3>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="run-server"><a class="markdownIt-Anchor" href="#run-server"></a> Run server</h3>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="generate-static-files"><a class="markdownIt-Anchor" href="#generate-static-files"></a> Generate static files</h3>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="deploy-to-remote-sites"><a class="markdownIt-Anchor" href="#deploy-to-remote-sites"></a> Deploy to remote sites</h3>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
+        <p>这个其实也是为CloudFormation服务的，就是为了批处理获取。<br>
+使用方法如下：<br>
+1：一个参数文件，通过上一篇文章进行获取。其实就是AMI的列表清单。<br>
+2：直接执行脚本调用，加上参数文件。</p>
+<p>具体效果如下，如您所见</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line">bogon:aws-kp jialj$ ./get-BIID.sh list </span><br><span class="line">+++++ This Region is eu-north-1 +++++++</span><br><span class="line">AMZNLINUXHVM: <span class="string">"ami-6d27a913"</span></span><br><span class="line">CENTOS7HVM: <span class="string">"ami-5ee66f20"</span></span><br><span class="line">US1404HVM: null</span><br><span class="line">US1604HVM: <span class="string">"ami-844ec6fa"</span></span><br><span class="line">SLES15HVM: null</span><br><span class="line">+++++ This Region is ap-south-1 +++++++</span><br><span class="line">AMZNLINUXHVM: <span class="string">"ami-0937dcc711d38ef3f"</span></span><br><span class="line">CENTOS7HVM: <span class="string">"ami-02e60be79e78fef21"</span></span><br><span class="line">US1404HVM: <span class="string">"ami-0f7148fa46b2632de"</span></span><br><span class="line">US1604HVM: <span class="string">"ami-0dd423361176c4c3e"</span></span><br><span class="line">SLES15HVM: <span class="string">"ami-03e5ec9da485cf78d"</span></span><br><span class="line">+++++ This Region is eu-west-3 +++++++</span><br><span class="line">AMZNLINUXHVM: <span class="string">"ami-0854d53ce963f69d8"</span></span><br><span class="line">CENTOS7HVM: <span class="string">"ami-0e1ab783dc9489f34"</span></span><br><span class="line">US1404HVM: <span class="string">"ami-0d6e5468607f10c4c"</span></span><br><span class="line">US1604HVM: <span class="string">"ami-0ed8bedf213030d40"</span></span><br><span class="line">SLES15HVM: <span class="string">"ami-0c754746fa7bb159f"</span></span><br><span class="line">+++++ This Region is eu-west-2 +++++++</span><br><span class="line">AMZNLINUXHVM: <span class="string">"ami-0664a710233d7c148"</span></span><br><span class="line">CENTOS7HVM: <span class="string">"ami-0eab3a90fc693af19"</span></span><br><span class="line">US1404HVM: <span class="string">"ami-02c7fa53678183d21"</span></span><br><span class="line">US1604HVM: <span class="string">"ami-04f1828daa77e5c19"</span></span><br><span class="line">SLES15HVM: <span class="string">"ami-2cce3b4b"</span></span><br><span class="line">+++++ This Region is eu-west-1 +++++++</span><br><span class="line">AMZNLINUXHVM: <span class="string">"ami-0fad7378adf284ce0"</span></span><br><span class="line">CENTOS7HVM: <span class="string">"ami-0ff760d16d9497662"</span></span><br><span class="line">US1404HVM: <span class="string">"ami-0a7d0c99e3408ca73"</span></span><br><span class="line">US1604HVM: <span class="string">"ami-0cbf7a0c36bde57c9"</span></span><br><span class="line">SLES15HVM: <span class="string">"ami-0533a134eaeabea0f"</span></span><br><span class="line">+++++ This Region is ap-northeast-3 +++++++</span><br><span class="line">AMZNLINUXHVM: <span class="string">"ami-02221e80207be5561"</span></span><br><span class="line">CENTOS7HVM: <span class="string">"ami-054dd155c89b8d778"</span></span><br><span class="line">US1404HVM: <span class="string">"ami-0b0dee6b7b98d4b16"</span></span><br><span class="line">US1604HVM: <span class="string">"ami-03602d38ba6801e13"</span></span><br><span class="line">SLES15HVM: null</span><br><span class="line">.....</span><br><span class="line">.....</span><br></pre></td></tr></table></figure>
+<p>参数文件写法：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">bogon:aws-test kook$ cat list</span><br><span class="line">AMZNLINUXHVM:amzn2-ami-hvm-2.0.20190115-x86_64-gp2</span><br><span class="line">CENTOS7HVM:CentOS Linux 7 x86_64 HVM EBS ENA 1901_01-b7ee8a69-ee97-4a49-9e68-afaee216db2e-ami-05713873c6794f575.4</span><br><span class="line">US1404HVM:ubuntu/images/hvm-ssd/ubuntu-trusty-14.04-amd64-server-20190429</span><br><span class="line">US1604HVM:ubuntu/images/hvm-ssd/ubuntu-xenial-16.04-amd64-server-20190514</span><br><span class="line">SLES15HVM:suse-sles-sap-15-v20180806-hvm-ssd-x86_64-6a4bc5af-a084-4f96-8402-5cd249e9091d-ami-06aee2e6db735d4f4.4</span><br></pre></td></tr></table></figure>
+<p>脚本内容：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/bash</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> [ -z <span class="string">"<span class="variable">$1</span>"</span> ] ; <span class="keyword">then</span></span><br><span class="line">    <span class="built_in">echo</span> <span class="string">"Please pass the name of the AMI"</span></span><br><span class="line">    <span class="built_in">exit</span> 1</span><br><span class="line"><span class="keyword">fi</span></span><br><span class="line"></span><br><span class="line">INPUT=<span class="string">"<span class="variable">$&#123;1&#125;</span>"</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="built_in">declare</span> -a REGIONS=($( aws --profile hk ec2 describe-regions --output json | jq <span class="string">'.Regions[].RegionName'</span> | sed <span class="string">'s/\"//g'</span> ))</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="string">"<span class="variable">$&#123;REGIONS[@]&#125;</span>"</span></span><br><span class="line"><span class="keyword">do</span> </span><br><span class="line">	<span class="built_in">echo</span> <span class="string">"+++++ This Region is <span class="variable">$i</span> +++++++"</span></span><br><span class="line">	cat <span class="variable">$INPUT</span> | <span class="keyword">while</span> <span class="built_in">read</span> line</span><br><span class="line">	<span class="keyword">do</span></span><br><span class="line">		AMI_LIST=$(<span class="built_in">echo</span> <span class="variable">$line</span> | awk -F: <span class="string">'&#123;print $2&#125;'</span>)</span><br><span class="line">		AMI_ALIAS=$(<span class="built_in">echo</span> <span class="variable">$line</span> | awk -F: <span class="string">'&#123;print $1&#125;'</span> )</span><br><span class="line">		IMAGE_FILTER=<span class="string">"<span class="variable">$&#123;AMI_LIST&#125;</span>"</span></span><br><span class="line">     		ami=$(aws --profile hk ec2 describe-images --query <span class="string">'Images[*].[ImageId]'</span> --filters <span class="string">"Name=name,Values=<span class="variable">$&#123;IMAGE_FILTER&#125;</span>"</span> --region <span class="variable">$&#123;i&#125;</span> --output json | jq <span class="string">'.[0][0]'</span>)</span><br><span class="line">		<span class="built_in">echo</span> <span class="string">"<span class="variable">$AMI_ALIAS</span>: <span class="variable">$ami</span>"</span></span><br><span class="line"> 	<span class="keyword">done</span></span><br><span class="line"><span class="keyword">done</span></span><br></pre></td></tr></table></figure>
       
     </div>
     <div class="article-footer">
@@ -358,7 +365,7 @@
     
     <li class="post-copyright-link hidden-xs">
       <strong>本文链接：</strong>
-      <a href="http://blog.jiazhe.space/2018/08/12/hello-world/" title="Hello World" target="_blank" rel="external">http://blog.jiazhe.space/2018/08/12/hello-world/</a>
+      <a href="http://blog.jiazhe.space/2019/05/24/How to get the AMI ID in batch by region/" title="如何以Region来批处理获取AMI ID？" target="_blank" rel="external">http://blog.jiazhe.space/2019/05/24/How to get the AMI ID in batch by region/</a>
     </li>
     
     
@@ -405,10 +412,10 @@
   
   <ul class="pager pull-left">
     
-    <li class="prev">
-      <a href="/2018/08/14/Cmd-Markdown-edit/" title="Cmd-Markdown-edit"><i class="icon icon-angle-left" aria-hidden="true"></i><span>&nbsp;&nbsp;Newer</span></a>
-    </li>
     
+    <li class="next">
+      <a href="/2019/05/22/CloudFormation - How to get AMI ID/" title="CloudFormation -  如何获取AWS的AMI ID？"><span>Older&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
+    </li>
     
     
   </ul>
@@ -552,7 +559,7 @@ var gitment = new Gitment({
   // id默认为当前页面url，如果url后带参数或锚点，gitment要重新初始化
   // https://github.com/imsun/gitment/issues/55
   // 解决方案：id:window.location.pathname,或者将id设置为当前页面标题
-  id: 'Hello World', 
+  id: '如何以Region来批处理获取AMI ID？', 
   owner: 'kookliu', // 可以是你的GitHub用户名，也可以是github id
   repo: 'kookliu.github.io',
   oauth: {

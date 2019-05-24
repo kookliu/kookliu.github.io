@@ -28,7 +28,7 @@
 <meta property="og:site_name" content="JIA&#39;s BLOG">
 <meta property="og:description" content="目前正在做CloudFormation的一些工作相关内容，Hong Kong Region是新开的Region，所以Global的一般提供的QuickStart里面的AMI Mapping都没有HK的内容。所以需要提取一下Hong Kong的内容。 概述：AMI ID是依据Owner去分类的，默认情况下分为amazon,aws-marketplace,microsoft,所以这里要注意你的AMI是">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-05-24T10:54:49.549Z">
+<meta property="og:updated_time" content="2019-05-24T11:33:01.746Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="CloudFormation -  如何获取AWS的AMI ID？">
 <meta name="twitter:description" content="目前正在做CloudFormation的一些工作相关内容，Hong Kong Region是新开的Region，所以Global的一般提供的QuickStart里面的AMI Mapping都没有HK的内容。所以需要提取一下Hong Kong的内容。 概述：AMI ID是依据Owner去分类的，默认情况下分为amazon,aws-marketplace,microsoft,所以这里要注意你的AMI是">
@@ -186,7 +186,7 @@
   <div class="widget">
     <h3 class="widget-title">Categories</h3>
     <div class="widget-body">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Automation/">Automation</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/基础学习/">基础学习</a><span class="category-list-count">1</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Automation/">Automation</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/基础学习/">基础学习</a><span class="category-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -196,7 +196,7 @@
   <div class="widget">
     <h3 class="widget-title">Tags</h3>
     <div class="widget-body">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CloudFormation/">CloudFormation</a><span class="tag-list-count">1</span></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CloudFormation/">CloudFormation</a><span class="tag-list-count">2</span></li></ul>
     </div>
   </div>
 
@@ -215,7 +215,7 @@
   <div class="widget">
     <h3 class="widget-title">Archive</h3>
     <div class="widget-body">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">May 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">August 2018</a><span class="archive-list-count">2</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">May 2019</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">August 2018</a><span class="archive-list-count">2</span></li></ul>
     </div>
   </div>
 
@@ -227,6 +227,21 @@
     <div class="widget-body">
       <ul class="recent-post-list list-unstyled no-thumbnail">
         
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/Automation/">Automation</a>
+              </p>
+              <p class="item-title">
+                <a href="/2019/05/24/How to get the AMI ID in batch by region/" class="title">如何以Region来批处理获取AMI ID？</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2019-05-24T11:31:32.854Z" itemprop="datePublished">2019-05-24</time>
+              </p>
+            </div>
+          </li>
+          
           <li>
             
             <div class="item-inner">
@@ -344,7 +359,7 @@
 注意点2：CentOS、centos、SLES、SuSE、sles是不一样的。区别大小写。</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">localhost:<span class="built_in">test</span> kook$ aws ec2 describe-images <span class="built_in">help</span></span><br><span class="line">...</span><br><span class="line">       --owners (list)</span><br><span class="line">          Filters  the  images  by  the owner. Specify an AWS account ID, self</span><br><span class="line">          (owner is the sender of the request), or an AWS owner  <span class="built_in">alias</span>  (valid</span><br><span class="line">          values  are  amazon  |  aws-marketplace | microsoft ). Omitting this</span><br><span class="line">          option returns all images <span class="keyword">for</span> <span class="built_in">which</span>  you  have  launch  permissions,</span><br><span class="line">          regardless of ownership.</span><br><span class="line"></span><br><span class="line">       Syntax:</span><br><span class="line"></span><br><span class="line">          <span class="string">"string"</span> <span class="string">"string"</span> ...</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
 <p>最终我们的目标是批量获取所有region的AMI ID，具体效果如下：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">bogon:aws-kp jialj$ ./get-ImageID.sh amzn2-ami-hvm-2.0.20190115-x86_64-gp2</span><br><span class="line">eu-north-1: <span class="string">"ami-6d27a913"</span></span><br><span class="line">ap-south-1: <span class="string">"ami-0937dcc711d38ef3f"</span></span><br><span class="line">eu-west-3: <span class="string">"ami-0854d53ce963f69d8"</span></span><br><span class="line">eu-west-2: <span class="string">"ami-0664a710233d7c148"</span></span><br><span class="line">eu-west-1: <span class="string">"ami-0fad7378adf284ce0"</span></span><br><span class="line">ap-northeast-3: <span class="string">"ami-02221e80207be5561"</span></span><br><span class="line">ap-northeast-2: <span class="string">"ami-018a9a930060d38aa"</span></span><br><span class="line">ap-northeast-1: <span class="string">"ami-0d7ed3ddb85b521a6"</span></span><br><span class="line">sa-east-1: <span class="string">"ami-0b04450959586da29"</span></span><br><span class="line">ca-central-1: <span class="string">"ami-0de8b8e4bc1f125fe"</span></span><br><span class="line">ap-east-1: <span class="string">"ami-062581e23e0ae6ab9"</span></span><br><span class="line">ap-southeast-1: <span class="string">"ami-04677bdaa3c2b6e24"</span></span><br><span class="line">ap-southeast-2: <span class="string">"ami-0c9d48b5db609ad6e"</span></span><br><span class="line">eu-central-1: <span class="string">"ami-0eaec5838478eb0ba"</span></span><br><span class="line">us-east-1: <span class="string">"ami-035be7bafff33b6b6"</span></span><br><span class="line">us-east-2: <span class="string">"ami-04328208f4f0cf1fe"</span></span><br><span class="line">us-west-1: <span class="string">"ami-0799ad445b5727125"</span></span><br><span class="line">us-west-2: <span class="string">"ami-032509850cf9ee54e"</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">bogon:aws-test kook$ ./get-ImageID.sh amzn2-ami-hvm-2.0.20190115-x86_64-gp2</span><br><span class="line">eu-north-1: <span class="string">"ami-6d27a913"</span></span><br><span class="line">ap-south-1: <span class="string">"ami-0937dcc711d38ef3f"</span></span><br><span class="line">eu-west-3: <span class="string">"ami-0854d53ce963f69d8"</span></span><br><span class="line">eu-west-2: <span class="string">"ami-0664a710233d7c148"</span></span><br><span class="line">eu-west-1: <span class="string">"ami-0fad7378adf284ce0"</span></span><br><span class="line">ap-northeast-3: <span class="string">"ami-02221e80207be5561"</span></span><br><span class="line">ap-northeast-2: <span class="string">"ami-018a9a930060d38aa"</span></span><br><span class="line">ap-northeast-1: <span class="string">"ami-0d7ed3ddb85b521a6"</span></span><br><span class="line">sa-east-1: <span class="string">"ami-0b04450959586da29"</span></span><br><span class="line">ca-central-1: <span class="string">"ami-0de8b8e4bc1f125fe"</span></span><br><span class="line">ap-east-1: <span class="string">"ami-062581e23e0ae6ab9"</span></span><br><span class="line">ap-southeast-1: <span class="string">"ami-04677bdaa3c2b6e24"</span></span><br><span class="line">ap-southeast-2: <span class="string">"ami-0c9d48b5db609ad6e"</span></span><br><span class="line">eu-central-1: <span class="string">"ami-0eaec5838478eb0ba"</span></span><br><span class="line">us-east-1: <span class="string">"ami-035be7bafff33b6b6"</span></span><br><span class="line">us-east-2: <span class="string">"ami-04328208f4f0cf1fe"</span></span><br><span class="line">us-west-1: <span class="string">"ami-0799ad445b5727125"</span></span><br><span class="line">us-west-2: <span class="string">"ami-032509850cf9ee54e"</span></span><br></pre></td></tr></table></figure>
 <p>补充脚本内容：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/bash</span></span><br><span class="line"><span class="keyword">if</span> [ -z <span class="string">"<span class="variable">$1</span>"</span> ] ; <span class="keyword">then</span></span><br><span class="line">    <span class="built_in">echo</span> <span class="string">"Please pass the name of the AMI"</span></span><br><span class="line">    <span class="built_in">exit</span> 1</span><br><span class="line"><span class="keyword">fi</span></span><br><span class="line"></span><br><span class="line">IMAGE_FILTER=<span class="string">"<span class="variable">$&#123;1&#125;</span>"</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">declare</span> -a REGIONS=($( aws --profile hk ec2 describe-regions --output json | jq <span class="string">'.Regions[].RegionName'</span> | sed <span class="string">'s/\"//g'</span> ))</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="string">"<span class="variable">$&#123;REGIONS[@]&#125;</span>"</span></span><br><span class="line"><span class="keyword">do</span> </span><br><span class="line">     	ami=$(aws --profile hk ec2 describe-images --query <span class="string">'Images[*].[ImageId]'</span> --filters <span class="string">"Name=name,Values=<span class="variable">$&#123;IMAGE_FILTER&#125;</span>"</span> --region <span class="variable">$&#123;i&#125;</span> --output json | jq <span class="string">'.[0][0]'</span>)</span><br><span class="line">	<span class="built_in">echo</span> <span class="string">"<span class="variable">$i</span>: <span class="variable">$ami</span>"</span></span><br><span class="line"><span class="keyword">done</span></span><br></pre></td></tr></table></figure>
       
@@ -401,6 +416,10 @@
   <div class="bar-inner">
   
   <ul class="pager pull-left">
+    
+    <li class="prev">
+      <a href="/2019/05/24/How to get the AMI ID in batch by region/" title="如何以Region来批处理获取AMI ID？"><i class="icon icon-angle-left" aria-hidden="true"></i><span>&nbsp;&nbsp;Newer</span></a>
+    </li>
     
     
     <li class="next">
