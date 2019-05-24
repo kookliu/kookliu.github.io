@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://blog.jiazhe.space/2019/05/22/CloudFormation%20-%20How%20to%20get%20AMI%20ID/</loc>
+    
+    <lastmod>2019-05-24T10:54:49.549Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://blog.jiazhe.space/2018/08/12/hello-world/</loc>
     
     <lastmod>2019-05-22T10:16:36.960Z</lastmod>
@@ -33,13 +40,6 @@
     <loc>http://blog.jiazhe.space/tags/index-1.html</loc>
     
     <lastmod>2019-05-22T09:06:27.346Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://blog.jiazhe.space/2019/05/22/CloudFormation%20-%20How%20to%20get%20AMI%20ID/</loc>
-    
-    <lastmod>2019-05-22T08:51:12.872Z</lastmod>
     
   </url>
   
