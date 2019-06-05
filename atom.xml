@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://blog.jiazhe.space/"/>
-  <updated>2019-05-24T11:42:53.111Z</updated>
+  <updated>2019-06-05T14:06:43.854Z</updated>
   <id>http://blog.jiazhe.space/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>如何在Private Subnet下使用S3 Endpoint?</title>
+    <link href="http://blog.jiazhe.space/2019/06/05/How%20to%20access%20s3%20endpoint%20from%20private%20subent/"/>
+    <id>http://blog.jiazhe.space/2019/06/05/How to access s3 endpoint from private subent/</id>
+    <published>2019-06-05T09:37:38.856Z</published>
+    <updated>2019-06-05T14:06:43.854Z</updated>
+    
+    <content type="html"><![CDATA[<p>测试说明：EC2在一个Private Subnet下，并且没有NAT,只有一个VPC的Local Route,然后添加S3 Endpoint,指向这个EC2所在的Subnet，确保这个Subnet存在了路由指向了这个S3 Endpoint。</p><p>坑：MD，我以为在Endpoint页面看到的com.amazonaws.cn-northwest-1.s3，就是endpoint的访问URL，但是并不是啊，啊！！！！！需要去文档：<a href="https://docs.amazonaws.cn/general/latest/gr/rande.html#cnnorthwest_region" target="_blank" rel="noopener">https://docs.amazonaws.cn/general/latest/gr/rande.html#cnnorthwest_region</a> ,我当前是宁夏，所以是这个路径：<a href="http://s3.cn-northwest-1.amazonaws.com.cn" target="_blank" rel="noopener">s3.cn-northwest-1.amazonaws.com.cn</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;测试说明：EC2在一个Private Subnet下，并且没有NAT,只有一个VPC的Local Route,然后添加S3 Endpoint,指向这个EC2所在的Subnet，确保这个Subnet存在了路由指向了这个S3 Endpoint。&lt;/p&gt;
+&lt;p&gt;坑：MD，我以为在
+      
+    
+    </summary>
+    
+    
+      <category term="Endpoints" scheme="http://blog.jiazhe.space/tags/Endpoints/"/>
+    
+  </entry>
   
   <entry>
     <title>如何以Region来批处理获取AMI ID？</title>

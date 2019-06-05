@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://blog.jiazhe.space/2019/06/05/How%20to%20access%20s3%20endpoint%20from%20private%20subent/</loc>
+    
+    <lastmod>2019-06-05T14:06:43.854Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://blog.jiazhe.space/2019/05/24/How%20to%20get%20the%20AMI%20ID%20in%20batch%20by%20region/</loc>
     
     <lastmod>2019-05-24T11:42:53.111Z</lastmod>
