@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://blog.jiazhe.space/2019/06/06/Preliminary-study-aws-storage-gateway/</loc>
+    
+    <lastmod>2019-06-06T02:31:27.539Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://blog.jiazhe.space/2019/06/05/How-to-access-s3-endpoint-from-private-subent/</loc>
     
     <lastmod>2019-06-05T14:29:44.968Z</lastmod>
