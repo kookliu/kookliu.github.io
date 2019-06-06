@@ -19,11 +19,11 @@
   <meta name="google-site-verification" content="LrwD62uNl-hBIAWd4hlzKeN4WR51HNulZihO_EL3A_A" />
   
   
-  <title>AWS Storage Gateway 初步探秘? | Hexo</title>
+  <title>AWS Storage Gateway 初探 | Hexo</title>
   <meta name="description" content="这个东西终于用了一下，先文字描述一下，慨叹一下这个东西设计的确实挺牛逼的。当前场景使用的只是文件网关。 功能：这个东西简单来说，如果你是私有云，可以用AWS提供的一个VM，在你的线下环境部署，然后和AWS进行同步，将数据写到AWS的S3上去。这里说是同步，其实是一个Cache,因为不是线上数据对等的，因为这个磁盘决定不可能和线上一样大的。在使用中会显示为8EB。但是实际上你的缓存服务器可能是500">
 <meta name="keywords" content="AWS Storage Gateway,Hybird Cloud">
 <meta property="og:type" content="article">
-<meta property="og:title" content="AWS Storage Gateway 初步探秘?">
+<meta property="og:title" content="AWS Storage Gateway 初探">
 <meta property="og:url" content="http://blog.jiazhe.space/2019/06/06/Preliminary-study-aws-storage-gateway/index.html">
 <meta property="og:site_name" content="JIA&#39;s BLOG">
 <meta property="og:description" content="这个东西终于用了一下，先文字描述一下，慨叹一下这个东西设计的确实挺牛逼的。当前场景使用的只是文件网关。 功能：这个东西简单来说，如果你是私有云，可以用AWS提供的一个VM，在你的线下环境部署，然后和AWS进行同步，将数据写到AWS的S3上去。这里说是同步，其实是一个Cache,因为不是线上数据对等的，因为这个磁盘决定不可能和线上一样大的。在使用中会显示为8EB。但是实际上你的缓存服务器可能是500">
@@ -33,9 +33,9 @@
 <meta property="og:image" content="http://blog.jiazhe.space/2019/06/06/Preliminary-study-aws-storage-gateway/03.jpg">
 <meta property="og:image" content="http://blog.jiazhe.space/2019/06/06/Preliminary-study-aws-storage-gateway/04.jpg">
 <meta property="og:image" content="http://blog.jiazhe.space/2019/06/06/Preliminary-study-aws-storage-gateway/05.jpg">
-<meta property="og:updated_time" content="2019-06-06T03:08:24.675Z">
+<meta property="og:updated_time" content="2019-06-06T03:13:56.484Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="AWS Storage Gateway 初步探秘?">
+<meta name="twitter:title" content="AWS Storage Gateway 初探">
 <meta name="twitter:description" content="这个东西终于用了一下，先文字描述一下，慨叹一下这个东西设计的确实挺牛逼的。当前场景使用的只是文件网关。 功能：这个东西简单来说，如果你是私有云，可以用AWS提供的一个VM，在你的线下环境部署，然后和AWS进行同步，将数据写到AWS的S3上去。这里说是同步，其实是一个Cache,因为不是线上数据对等的，因为这个磁盘决定不可能和线上一样大的。在使用中会显示为8EB。但是实际上你的缓存服务器可能是500">
 <meta name="twitter:image" content="http://blog.jiazhe.space/2019/06/06/Preliminary-study-aws-storage-gateway/01.jpg">
   <!-- Canonical links -->
@@ -240,7 +240,7 @@
                 
               </p>
               <p class="item-title">
-                <a href="/2019/06/06/Preliminary-study-aws-storage-gateway/" class="title">AWS Storage Gateway 初步探秘?</a>
+                <a href="/2019/06/06/Preliminary-study-aws-storage-gateway/" class="title">AWS Storage Gateway 初探</a>
               </p>
               <p class="item-date">
                 <time datetime="2019-06-06T01:57:52.923Z" itemprop="datePublished">2019-06-06</time>
@@ -328,7 +328,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      AWS Storage Gateway 初步探秘?
+      AWS Storage Gateway 初探
     </h1>
   
 
@@ -394,7 +394,7 @@
     
     <li class="post-copyright-link hidden-xs">
       <strong>本文链接：</strong>
-      <a href="http://blog.jiazhe.space/2019/06/06/Preliminary-study-aws-storage-gateway/" title="AWS Storage Gateway 初步探秘?" target="_blank" rel="external">http://blog.jiazhe.space/2019/06/06/Preliminary-study-aws-storage-gateway/</a>
+      <a href="http://blog.jiazhe.space/2019/06/06/Preliminary-study-aws-storage-gateway/" title="AWS Storage Gateway 初探" target="_blank" rel="external">http://blog.jiazhe.space/2019/06/06/Preliminary-study-aws-storage-gateway/</a>
     </li>
     
     
@@ -588,7 +588,7 @@ var gitment = new Gitment({
   // id默认为当前页面url，如果url后带参数或锚点，gitment要重新初始化
   // https://github.com/imsun/gitment/issues/55
   // 解决方案：id:window.location.pathname,或者将id设置为当前页面标题
-  id: 'AWS Storage Gateway 初步探秘?', 
+  id: 'AWS Storage Gateway 初探', 
   owner: 'kookliu', // 可以是你的GitHub用户名，也可以是github id
   repo: 'kookliu.github.io',
   oauth: {
