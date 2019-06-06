@@ -28,7 +28,7 @@
 <meta property="og:site_name" content="JIA&#39;s BLOG">
 <meta property="og:description" content="这个东西终于用了一下，先文字描述一下，慨叹一下这个东西设计的确实挺牛逼的。当前场景使用的只是文件网关。 功能：这个东西简单来说，如果你是私有云，可以用AWS提供的一个VM，在你的线下环境部署（VMware虚拟机），然后和AWS进行同步，将数据写到AWS的S3上去。这里说是同步，其实是一个Cache,因为不是线上数据对等的，因为这个磁盘决定不可能和线上一样大的。在使用中会显示为8EB。但是实际上你的">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-06-06T02:31:56.917Z">
+<meta property="og:updated_time" content="2019-06-06T02:34:38.781Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="AWS Storage Gateway 初步探秘?">
 <meta name="twitter:description" content="这个东西终于用了一下，先文字描述一下，慨叹一下这个东西设计的确实挺牛逼的。当前场景使用的只是文件网关。 功能：这个东西简单来说，如果你是私有云，可以用AWS提供的一个VM，在你的线下环境部署（VMware虚拟机），然后和AWS进行同步，将数据写到AWS的S3上去。这里说是同步，其实是一个Cache,因为不是线上数据对等的，因为这个磁盘决定不可能和线上一样大的。在使用中会显示为8EB。但是实际上你的">
@@ -368,11 +368,7 @@
 <p>这个牛逼的地方就是2这个步骤里面，如果你的Agent就在内网部署，你觉得能够正确完成配置吗？<br>
 解答：事实上就是能。但是需要你的当前配置的Workstation，也就是你正在做这个配置的笔记本或者台式机，能正常访问到Agent的80/443, 在进行2配置的时候，会从AWS 云上下载一个API调用的临时文件，然后跳转到Agent_IP:80上，完成这个信息注入，从而将这台Agent注册到AWS云上的Storage Gateway上的对端服务上。 也就是你的Workstation作为这个配置的一部分了。这个设计是真的牛逼。</p>
 <p>补充一个问题，如果是云上呢？你的EC2 AMI是否需要公网IP吗？想一想。考虑这个答案。</p>
-<blockquote>
-<ul>
-<li>所以在这个配置里面真正的条件就是。你的Workstation在那个页面跳转后，你当前的网络能访问到Agent的IP吗？</li>
-</ul>
-</blockquote>
+<p><font color="#FF0000" size="4"> ** 所以在这个配置里面真正的条件就是。你的Workstation在那个页面跳转后，你当前的网络能访问到Agent的IP吗？ **</font></p>
 <p>所以你答案你清楚了吧？ 是否是公网IP不重要，只有你能通过Internet能访问到AWS，因为是你主动发起的。</p>
 <p>先这样，回头抽空补图。</p>
 
