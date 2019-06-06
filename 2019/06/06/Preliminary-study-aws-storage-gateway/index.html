@@ -28,10 +28,16 @@
 <meta property="og:site_name" content="JIA&#39;s BLOG">
 <meta property="og:description" content="这个东西终于用了一下，先文字描述一下，慨叹一下这个东西设计的确实挺牛逼的。当前场景使用的只是文件网关。 功能：这个东西简单来说，如果你是私有云，可以用AWS提供的一个VM，在你的线下环境部署，然后和AWS进行同步，将数据写到AWS的S3上去。这里说是同步，其实是一个Cache,因为不是线上数据对等的，因为这个磁盘决定不可能和线上一样大的。在使用中会显示为8EB。但是实际上你的缓存服务器可能是500">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-06-06T02:54:58.017Z">
+<meta property="og:image" content="http://blog.jiazhe.space/2019/06/06/Preliminary-study-aws-storage-gateway/01.jpg">
+<meta property="og:image" content="http://blog.jiazhe.space/2019/06/06/Preliminary-study-aws-storage-gateway/02.jpg">
+<meta property="og:image" content="http://blog.jiazhe.space/2019/06/06/Preliminary-study-aws-storage-gateway/03.jpg">
+<meta property="og:image" content="http://blog.jiazhe.space/2019/06/06/Preliminary-study-aws-storage-gateway/04.jpg">
+<meta property="og:image" content="http://blog.jiazhe.space/2019/06/06/Preliminary-study-aws-storage-gateway/05.jpg">
+<meta property="og:updated_time" content="2019-06-06T03:03:33.861Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="AWS Storage Gateway 初步探秘?">
 <meta name="twitter:description" content="这个东西终于用了一下，先文字描述一下，慨叹一下这个东西设计的确实挺牛逼的。当前场景使用的只是文件网关。 功能：这个东西简单来说，如果你是私有云，可以用AWS提供的一个VM，在你的线下环境部署，然后和AWS进行同步，将数据写到AWS的S3上去。这里说是同步，其实是一个Cache,因为不是线上数据对等的，因为这个磁盘决定不可能和线上一样大的。在使用中会显示为8EB。但是实际上你的缓存服务器可能是500">
+<meta name="twitter:image" content="http://blog.jiazhe.space/2019/06/06/Preliminary-study-aws-storage-gateway/01.jpg">
   <!-- Canonical links -->
   <link rel="canonical" href="http://blog.jiazhe.space/2019/06/06/Preliminary-study-aws-storage-gateway/index.html">
   
@@ -371,6 +377,12 @@
 <p><font color="#FF0000"><strong>所以在这个配置里面真正的条件就是。你的Workstation在那个页面跳转后，你当前的网络能访问到Agent的IP吗?</strong></font></p>
 <p>所以你答案你清楚了吧？ 是否是公网IP不重要，只要你的Agent能通过Internet能访问到AWS，因为是你线下主动发起的。在NAT后面也完全无所谓。</p>
 <p>先这样，回头抽空补图。</p>
+<p>补图：</p>
+<p><img src="01.jpg" alt=""><br>
+<img src="02.jpg" alt=""><br>
+<img src="03.jpg" alt=""><br>
+<img src="04.jpg" alt=""><br>
+<img src="05.jpg" alt=""></p>
 
       
     </div>
