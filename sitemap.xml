@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://blog.jiazhe.space/2019/05/22/CloudFormation%20-%20How%20to%20get%20AMI%20ID/</loc>
+    
+    <lastmod>2019-08-20T06:02:21.911Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://blog.jiazhe.space/2019/06/06/Preliminary-study-aws-storage-gateway/</loc>
     
     <lastmod>2019-06-06T03:13:56.484Z</lastmod>
@@ -19,13 +26,6 @@
     <loc>http://blog.jiazhe.space/2019/05/24/How%20to%20get%20the%20AMI%20ID%20in%20batch%20by%20region/</loc>
     
     <lastmod>2019-05-24T11:42:53.111Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://blog.jiazhe.space/2019/05/22/CloudFormation%20-%20How%20to%20get%20AMI%20ID/</loc>
-    
-    <lastmod>2019-05-24T11:33:01.746Z</lastmod>
     
   </url>
   
