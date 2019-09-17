@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://blog.jiazhe.space/2019/06/05/How-to-access-s3-endpoint-from-private-subent/</loc>
+    
+    <lastmod>2019-09-17T23:38:08.997Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://blog.jiazhe.space/2019/05/22/CloudFormation%20-%20How%20to%20get%20AMI%20ID/</loc>
     
     <lastmod>2019-08-20T06:02:21.911Z</lastmod>
@@ -12,13 +19,6 @@
     <loc>http://blog.jiazhe.space/2019/06/06/Preliminary-study-aws-storage-gateway/</loc>
     
     <lastmod>2019-06-06T03:13:56.484Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://blog.jiazhe.space/2019/06/05/How-to-access-s3-endpoint-from-private-subent/</loc>
-    
-    <lastmod>2019-06-05T14:29:44.968Z</lastmod>
     
   </url>
   
