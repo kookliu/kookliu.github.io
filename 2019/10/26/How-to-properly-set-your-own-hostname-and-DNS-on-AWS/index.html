@@ -28,7 +28,7 @@
 <meta property="og:site_name" content="JIA&#39;s BLOG">
 <meta property="og:description" content="参考文档: https://amazonaws-china.com/cn/premiumsupport/knowledge-center/ec2-static-dns-ubuntu-debian/ https://amazonaws-china.com/cn/premiumsupport/knowledge-center/linux-static-hostname-rhel7-centos7/ 起">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-10-26T14:58:54.970Z">
+<meta property="og:updated_time" content="2019-10-26T15:08:31.594Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="如何在AWS上为RHEL或CentOS设定固定的主机名和域名？">
 <meta name="twitter:description" content="参考文档: https://amazonaws-china.com/cn/premiumsupport/knowledge-center/ec2-static-dns-ubuntu-debian/ https://amazonaws-china.com/cn/premiumsupport/knowledge-center/linux-static-hostname-rhel7-centos7/ 起">
@@ -376,6 +376,23 @@ DNS hostnames   // 没测试出来有啥用，仍然能在dhcp后获取到主机
 <p>说明，整体影响因素是 1 -&gt; 2 -&gt; 3 -&gt; 4 , 从前到后，最后的具有决定性。但是中间的前面的配置影响后面的配置。</p>
 <p>最后可以实现我的方法:</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#### hostname</span></span><br><span class="line">hostnamectl <span class="built_in">set</span>-hostname --static kookliu.jia.com</span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"preserve_hostname: true"</span> &gt;&gt; /etc/cloud/cloud.cfg</span><br><span class="line"></span><br><span class="line"><span class="comment">#### dns</span></span><br><span class="line"></span><br><span class="line">cat &gt; /etc/dhcp/dhclient.conf &lt;&lt; EOF</span><br><span class="line">prepend domain-name-servers 114.114.114.114, 8.8.8.8;</span><br><span class="line">supersede domain-search <span class="string">"jia.com"</span>;</span><br><span class="line">EOF</span><br></pre></td></tr></table></figure>
+<p>结论：一定要确认，重启后，仍然是有效的。</p>
+<p>我说一下错误的两种配置方法，重启后都丢了，你能知道为什么吧？</p>
+<p>方法一：</p>
+<p>1：主机名<br>
+hostnamectl set-hostname --static <a href="http://kookliu.jia.com" target="_blank" rel="noopener">kookliu.jia.com</a></p>
+<p>2: DNS解析<br>
+cat &gt;&gt; /etc/sysconfig/network-scripts/ifcfg-eth0 &lt;&lt;TOF<br>
+PEERDNS=no<br>
+DNS1=8.8.8.8<br>
+DNS2=8.8.4.4<br>
+TOF<br>
+systemctl restart network</p>
+<p>方法二：</p>
+<p>DNS修改(存在bug,没个卵用)</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">[root@ip-10-0-102-198 ~]<span class="comment"># cat /usr/share/doc/cloud-init/examples/cloud-config-resolv-conf.txt</span></span><br><span class="line"><span class="comment">#cloud-config</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># This is an example file to automatically configure resolv.conf when the</span></span><br><span class="line"><span class="comment"># instance boots for the first time.</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># Ensure that your yaml is valid and pass this as user-data when starting</span></span><br><span class="line"><span class="comment"># the instance. Also be sure that your cloud.cfg file includes this</span></span><br><span class="line"><span class="comment"># configuration module in the appropriate section.</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line">manage_resolv_conf: <span class="literal">true</span></span><br><span class="line"></span><br><span class="line">resolv_conf:</span><br><span class="line">  nameservers: [<span class="string">'8.8.4.4'</span>, <span class="string">'8.8.8.8'</span>]</span><br><span class="line">  searchdomains:</span><br><span class="line">    - foo.example.com</span><br><span class="line">    - bar.example.com</span><br><span class="line">  domain: example.com</span><br><span class="line">  options:</span><br><span class="line">    rotate: <span class="literal">true</span></span><br><span class="line">    timeout: 1</span><br><span class="line">[root@ip-10-0-102-198 ~]<span class="comment"># ls /etc/cloud/</span></span><br><span class="line">cloud.cfg    cloud.cfg.d/ templates/</span><br><span class="line">[root@ip-10-0-102-198 ~]<span class="comment"># ls /etc/cloud/cloud.cfg.d/</span></span><br><span class="line">05_logging.cfg  99-datasource.cfg  README</span><br><span class="line">[root@ip-10-0-102-198 ~]<span class="comment"># cat /usr/share/doc/cloud-init/examples/cloud-config-resolv-conf.txt &gt;&gt; 90_dns.cfg</span></span><br></pre></td></tr></table></figure>
+<p>花了很长时间debug这个问题。没有结果。</p>
+
       
     </div>
     <div class="article-footer">
