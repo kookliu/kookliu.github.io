@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://blog.jiazhe.space/2019/10/26/How-to-properly-set-your-own-hostname-and-DNS-on-AWS/</loc>
+    
+    <lastmod>2019-10-26T14:58:54.970Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://blog.jiazhe.space/2019/06/05/How-to-access-s3-endpoint-from-private-subent/</loc>
     
     <lastmod>2019-09-17T23:38:08.997Z</lastmod>

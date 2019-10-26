@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://blog.jiazhe.space/"/>
-  <updated>2019-06-06T03:13:56.484Z</updated>
+  <updated>2019-10-26T14:58:54.970Z</updated>
   <id>http://blog.jiazhe.space/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>如何在AWS上为RHEL或CentOS设定固定的主机名和域名？</title>
+    <link href="http://blog.jiazhe.space/2019/10/26/How-to-properly-set-your-own-hostname-and-DNS-on-AWS/"/>
+    <id>http://blog.jiazhe.space/2019/10/26/How-to-properly-set-your-own-hostname-and-DNS-on-AWS/</id>
+    <published>2019-10-26T14:31:01.000Z</published>
+    <updated>2019-10-26T14:58:54.970Z</updated>
+    
+    <content type="html"><![CDATA[<p>参考文档:<br><a href="https://amazonaws-china.com/cn/premiumsupport/knowledge-center/ec2-static-dns-ubuntu-debian/" target="_blank" rel="noopener">https://amazonaws-china.com/cn/premiumsupport/knowledge-center/ec2-static-dns-ubuntu-debian/</a><br><a href="https://amazonaws-china.com/cn/premiumsupport/knowledge-center/linux-static-hostname-rhel7-centos7/" target="_blank" rel="noopener">https://amazonaws-china.com/cn/premiumsupport/knowledge-center/linux-static-hostname-rhel7-centos7/</a></p><p>起因:<br>客户环境需要独立的解析，所以新建了DNS，forward了AWS的DNS，然后让自己所有主机指定自己自建的DNS，从而加入内部解析。</p><p>测试了一番，最主要的的几个影响因素：<br>1: VPC 设定<br>DNS resolution  // 这个如果不enable, 你所在的subnet x.x.x.2的地址不再提供解析<br>DNS hostnames   // 没测试出来有啥用，仍然能在dhcp后获取到主机名。<br>2: Cloud-init<br>抄来的 The cloud-init program is a bootstrapping utility for pre-provisioned disk images that run in virtualized environments, usually cloud-oriented services. You use it to add SSH keys, set hostnames, run post-install scripts or install provisioning agents (like Chef or Puppet).</p><p>这里可以控制resolv.conf和hostname，也是我们重要修改的地方。这里修改了，才能让hostname固定下来。<br>实测后发现,resolv.conf的修改在这里修改是存在bug的。如果想了解cloud init可以控制的内容，可以参考一下local doc里面看一下。</p><p>我自己理解了一下，但是可能是错的。就不说了。</p><p>3: NetworkManager<br>默认的RHEL/Centos的网络管理器。</p><p>4: DHCP(dhclient)<br>最后dhcp client的执行层面。</p><p>说明，整体影响因素是 1 -&gt; 2 -&gt; 3 -&gt; 4 , 从前到后，最后的具有决定性。但是中间的前面的配置影响后面的配置。</p><p>最后可以实现我的方法:</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#### hostname</span></span><br><span class="line">hostnamectl <span class="built_in">set</span>-hostname --static kookliu.jia.com</span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"preserve_hostname: true"</span> &gt;&gt; /etc/cloud/cloud.cfg</span><br><span class="line"></span><br><span class="line"><span class="comment">#### dns</span></span><br><span class="line"></span><br><span class="line">cat &gt; /etc/dhcp/dhclient.conf &lt;&lt; EOF</span><br><span class="line">prepend domain-name-servers 114.114.114.114, 8.8.8.8;</span><br><span class="line">supersede domain-search <span class="string">"jia.com"</span>;</span><br><span class="line">EOF</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;参考文档:&lt;br&gt;
+&lt;a href=&quot;https://amazonaws-china.com/cn/premiumsupport/knowledge-center/ec2-static-dns-ubuntu-debian/&quot; target=&quot;_blank&quot; rel=&quot;noo
+      
+    
+    </summary>
+    
+    
+      <category term="AWS" scheme="http://blog.jiazhe.space/tags/AWS/"/>
+    
+  </entry>
   
   <entry>
     <title>AWS Storage Gateway 初探</title>

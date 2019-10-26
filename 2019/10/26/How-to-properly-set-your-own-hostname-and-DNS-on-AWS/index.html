@@ -19,21 +19,21 @@
   <meta name="google-site-verification" content="LrwD62uNl-hBIAWd4hlzKeN4WR51HNulZihO_EL3A_A" />
   
   
-  <title>如何以Region来批处理获取AMI ID？ | Hexo</title>
-  <meta name="description" content="这个其实也是为CloudFormation服务的，就是为了批处理获取。 使用方法如下： 1：一个参数文件，通过上一篇文章进行获取。其实就是AMI的列表清单。 2：直接执行脚本调用，加上参数文件。 具体效果如下，如您所见 123456789101112131415161718192021222324252627282930313233343536373839bogon:aws-kp jialj$ .">
-<meta name="keywords" content="CloudFormation">
+  <title>如何在AWS上为RHEL或CentOS设定固定的主机名和域名？ | Hexo</title>
+  <meta name="description" content="参考文档: https://amazonaws-china.com/cn/premiumsupport/knowledge-center/ec2-static-dns-ubuntu-debian/ https://amazonaws-china.com/cn/premiumsupport/knowledge-center/linux-static-hostname-rhel7-centos7/ 起">
+<meta name="keywords" content="AWS">
 <meta property="og:type" content="article">
-<meta property="og:title" content="如何以Region来批处理获取AMI ID？">
-<meta property="og:url" content="http://blog.jiazhe.space/2019/05/24/How to get the AMI ID in batch by region/index.html">
+<meta property="og:title" content="如何在AWS上为RHEL或CentOS设定固定的主机名和域名？">
+<meta property="og:url" content="http://blog.jiazhe.space/2019/10/26/How-to-properly-set-your-own-hostname-and-DNS-on-AWS/index.html">
 <meta property="og:site_name" content="JIA&#39;s BLOG">
-<meta property="og:description" content="这个其实也是为CloudFormation服务的，就是为了批处理获取。 使用方法如下： 1：一个参数文件，通过上一篇文章进行获取。其实就是AMI的列表清单。 2：直接执行脚本调用，加上参数文件。 具体效果如下，如您所见 123456789101112131415161718192021222324252627282930313233343536373839bogon:aws-kp jialj$ .">
+<meta property="og:description" content="参考文档: https://amazonaws-china.com/cn/premiumsupport/knowledge-center/ec2-static-dns-ubuntu-debian/ https://amazonaws-china.com/cn/premiumsupport/knowledge-center/linux-static-hostname-rhel7-centos7/ 起">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-05-24T11:42:53.111Z">
+<meta property="og:updated_time" content="2019-10-26T14:58:54.970Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="如何以Region来批处理获取AMI ID？">
-<meta name="twitter:description" content="这个其实也是为CloudFormation服务的，就是为了批处理获取。 使用方法如下： 1：一个参数文件，通过上一篇文章进行获取。其实就是AMI的列表清单。 2：直接执行脚本调用，加上参数文件。 具体效果如下，如您所见 123456789101112131415161718192021222324252627282930313233343536373839bogon:aws-kp jialj$ .">
+<meta name="twitter:title" content="如何在AWS上为RHEL或CentOS设定固定的主机名和域名？">
+<meta name="twitter:description" content="参考文档: https://amazonaws-china.com/cn/premiumsupport/knowledge-center/ec2-static-dns-ubuntu-debian/ https://amazonaws-china.com/cn/premiumsupport/knowledge-center/linux-static-hostname-rhel7-centos7/ 起">
   <!-- Canonical links -->
-  <link rel="canonical" href="http://blog.jiazhe.space/2019/05/24/How to get the AMI ID in batch by region/index.html">
+  <link rel="canonical" href="http://blog.jiazhe.space/2019/10/26/How-to-properly-set-your-own-hostname-and-DNS-on-AWS/index.html">
   
     <link rel="alternate" href="/atom.xml" title="JIA&#39;s BLOG" type="application/atom+xml">
   
@@ -44,8 +44,6 @@
   <!-- <link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"> -->
   <link rel="stylesheet" href="/css/style.css">
   
-    
-        <link href="https://cdn.bootcss.com/KaTeX/0.7.1/katex.min.css" rel="stylesheet">
     
     
         <link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
@@ -315,14 +313,14 @@
   
 <main class="main" role="main">
   <div class="content">
-  <article id="post-How to get the AMI ID in batch by region" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+  <article id="post-How-to-properly-set-your-own-hostname-and-DNS-on-AWS" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
     
     <div class="article-header">
       
         
   
     <h1 class="article-title" itemprop="name">
-      如何以Region来批处理获取AMI ID？
+      如何在AWS上为RHEL或CentOS设定固定的主机名和域名？
     </h1>
   
 
@@ -330,20 +328,15 @@
       <div class="article-meta">
         <span class="article-date">
     <i class="icon icon-calendar-check"></i>
-	<a href="/2019/05/24/How to get the AMI ID in batch by region/" class="article-date">
-	  <time datetime="2019-05-24T11:31:32.854Z" itemprop="datePublished">2019-05-24</time>
+	<a href="/2019/10/26/How-to-properly-set-your-own-hostname-and-DNS-on-AWS/" class="article-date">
+	  <time datetime="2019-10-26T14:31:01.000Z" itemprop="datePublished">2019-10-26</time>
 	</a>
 </span>
         
-  <span class="article-category">
-    <i class="icon icon-folder"></i>
-    <a class="article-category-link" href="/categories/Automation/">Automation</a>
-  </span>
-
         
   <span class="article-tag">
     <i class="icon icon-tags"></i>
-	<a class="article-tag-link" href="/tags/CloudFormation/">CloudFormation</a>
+	<a class="article-tag-link" href="/tags/AWS/">AWS</a>
   </span>
 
 
@@ -356,22 +349,33 @@
 	</span>
 
 
-        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2019/05/24/How to get the AMI ID in batch by region/#comments" class="article-comment-link">Comments</a></span>
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2019/10/26/How-to-properly-set-your-own-hostname-and-DNS-on-AWS/#comments" class="article-comment-link">Comments</a></span>
         
       </div>
     </div>
     <div class="article-entry markdown-body" itemprop="articleBody">
       
-        <p>这个其实也是为CloudFormation服务的，就是为了批处理获取。<br>
-使用方法如下：<br>
-1：一个参数文件，通过上一篇文章进行获取。其实就是AMI的列表清单。<br>
-2：直接执行脚本调用，加上参数文件。</p>
-<p>具体效果如下，如您所见</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line">bogon:aws-kp jialj$ ./get-BIID.sh list </span><br><span class="line">+++++ This Region is eu-north-1 +++++++</span><br><span class="line">AMZNLINUXHVM: <span class="string">"ami-6d27a913"</span></span><br><span class="line">CENTOS7HVM: <span class="string">"ami-5ee66f20"</span></span><br><span class="line">US1404HVM: null</span><br><span class="line">US1604HVM: <span class="string">"ami-844ec6fa"</span></span><br><span class="line">SLES15HVM: null</span><br><span class="line">+++++ This Region is ap-south-1 +++++++</span><br><span class="line">AMZNLINUXHVM: <span class="string">"ami-0937dcc711d38ef3f"</span></span><br><span class="line">CENTOS7HVM: <span class="string">"ami-02e60be79e78fef21"</span></span><br><span class="line">US1404HVM: <span class="string">"ami-0f7148fa46b2632de"</span></span><br><span class="line">US1604HVM: <span class="string">"ami-0dd423361176c4c3e"</span></span><br><span class="line">SLES15HVM: <span class="string">"ami-03e5ec9da485cf78d"</span></span><br><span class="line">+++++ This Region is eu-west-3 +++++++</span><br><span class="line">AMZNLINUXHVM: <span class="string">"ami-0854d53ce963f69d8"</span></span><br><span class="line">CENTOS7HVM: <span class="string">"ami-0e1ab783dc9489f34"</span></span><br><span class="line">US1404HVM: <span class="string">"ami-0d6e5468607f10c4c"</span></span><br><span class="line">US1604HVM: <span class="string">"ami-0ed8bedf213030d40"</span></span><br><span class="line">SLES15HVM: <span class="string">"ami-0c754746fa7bb159f"</span></span><br><span class="line">+++++ This Region is eu-west-2 +++++++</span><br><span class="line">AMZNLINUXHVM: <span class="string">"ami-0664a710233d7c148"</span></span><br><span class="line">CENTOS7HVM: <span class="string">"ami-0eab3a90fc693af19"</span></span><br><span class="line">US1404HVM: <span class="string">"ami-02c7fa53678183d21"</span></span><br><span class="line">US1604HVM: <span class="string">"ami-04f1828daa77e5c19"</span></span><br><span class="line">SLES15HVM: <span class="string">"ami-2cce3b4b"</span></span><br><span class="line">+++++ This Region is eu-west-1 +++++++</span><br><span class="line">AMZNLINUXHVM: <span class="string">"ami-0fad7378adf284ce0"</span></span><br><span class="line">CENTOS7HVM: <span class="string">"ami-0ff760d16d9497662"</span></span><br><span class="line">US1404HVM: <span class="string">"ami-0a7d0c99e3408ca73"</span></span><br><span class="line">US1604HVM: <span class="string">"ami-0cbf7a0c36bde57c9"</span></span><br><span class="line">SLES15HVM: <span class="string">"ami-0533a134eaeabea0f"</span></span><br><span class="line">+++++ This Region is ap-northeast-3 +++++++</span><br><span class="line">AMZNLINUXHVM: <span class="string">"ami-02221e80207be5561"</span></span><br><span class="line">CENTOS7HVM: <span class="string">"ami-054dd155c89b8d778"</span></span><br><span class="line">US1404HVM: <span class="string">"ami-0b0dee6b7b98d4b16"</span></span><br><span class="line">US1604HVM: <span class="string">"ami-03602d38ba6801e13"</span></span><br><span class="line">SLES15HVM: null</span><br><span class="line">.....</span><br><span class="line">.....</span><br></pre></td></tr></table></figure>
-<p>参数文件写法：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">bogon:aws-test kook$ cat list</span><br><span class="line">AMZNLINUXHVM:amzn2-ami-hvm-2.0.20190115-x86_64-gp2</span><br><span class="line">CENTOS7HVM:CentOS Linux 7 x86_64 HVM EBS ENA 1901_01-b7ee8a69-ee97-4a49-9e68-afaee216db2e-ami-05713873c6794f575.4</span><br><span class="line">US1404HVM:ubuntu/images/hvm-ssd/ubuntu-trusty-14.04-amd64-server-20190429</span><br><span class="line">US1604HVM:ubuntu/images/hvm-ssd/ubuntu-xenial-16.04-amd64-server-20190514</span><br><span class="line">SLES15HVM:suse-sles-sap-15-v20180806-hvm-ssd-x86_64-6a4bc5af-a084-4f96-8402-5cd249e9091d-ami-06aee2e6db735d4f4.4</span><br></pre></td></tr></table></figure>
-<p>脚本内容：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/bash</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> [ -z <span class="string">"<span class="variable">$1</span>"</span> ] ; <span class="keyword">then</span></span><br><span class="line">    <span class="built_in">echo</span> <span class="string">"Please pass the name of the AMI"</span></span><br><span class="line">    <span class="built_in">exit</span> 1</span><br><span class="line"><span class="keyword">fi</span></span><br><span class="line"></span><br><span class="line">INPUT=<span class="string">"<span class="variable">$&#123;1&#125;</span>"</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="built_in">declare</span> -a REGIONS=($( aws --profile hk ec2 describe-regions --output json | jq <span class="string">'.Regions[].RegionName'</span> | sed <span class="string">'s/\"//g'</span> ))</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="string">"<span class="variable">$&#123;REGIONS[@]&#125;</span>"</span></span><br><span class="line"><span class="keyword">do</span> </span><br><span class="line">	<span class="built_in">echo</span> <span class="string">"+++++ This Region is <span class="variable">$i</span> +++++++"</span></span><br><span class="line">	cat <span class="variable">$INPUT</span> | <span class="keyword">while</span> <span class="built_in">read</span> line</span><br><span class="line">	<span class="keyword">do</span></span><br><span class="line">		AMI_LIST=$(<span class="built_in">echo</span> <span class="variable">$line</span> | awk -F: <span class="string">'&#123;print $2&#125;'</span>)</span><br><span class="line">		AMI_ALIAS=$(<span class="built_in">echo</span> <span class="variable">$line</span> | awk -F: <span class="string">'&#123;print $1&#125;'</span> )</span><br><span class="line">		IMAGE_FILTER=<span class="string">"<span class="variable">$&#123;AMI_LIST&#125;</span>"</span></span><br><span class="line">     		ami=$(aws --profile hk ec2 describe-images --query <span class="string">'Images[*].[ImageId]'</span> --filters <span class="string">"Name=name,Values=<span class="variable">$&#123;IMAGE_FILTER&#125;</span>"</span> --region <span class="variable">$&#123;i&#125;</span> --output json | jq <span class="string">'.[0][0]'</span>)</span><br><span class="line">		<span class="built_in">echo</span> <span class="string">"<span class="variable">$AMI_ALIAS</span>: <span class="variable">$ami</span>"</span></span><br><span class="line"> 	<span class="keyword">done</span></span><br><span class="line"><span class="keyword">done</span></span><br></pre></td></tr></table></figure>
+        <p>参考文档:<br>
+<a href="https://amazonaws-china.com/cn/premiumsupport/knowledge-center/ec2-static-dns-ubuntu-debian/" target="_blank" rel="noopener">https://amazonaws-china.com/cn/premiumsupport/knowledge-center/ec2-static-dns-ubuntu-debian/</a><br>
+<a href="https://amazonaws-china.com/cn/premiumsupport/knowledge-center/linux-static-hostname-rhel7-centos7/" target="_blank" rel="noopener">https://amazonaws-china.com/cn/premiumsupport/knowledge-center/linux-static-hostname-rhel7-centos7/</a></p>
+<p>起因:<br>
+客户环境需要独立的解析，所以新建了DNS，forward了AWS的DNS，然后让自己所有主机指定自己自建的DNS，从而加入内部解析。</p>
+<p>测试了一番，最主要的的几个影响因素：<br>
+1: VPC 设定<br>
+DNS resolution  // 这个如果不enable, 你所在的subnet x.x.x.2的地址不再提供解析<br>
+DNS hostnames   // 没测试出来有啥用，仍然能在dhcp后获取到主机名。<br>
+2: Cloud-init<br>
+抄来的 The cloud-init program is a bootstrapping utility for pre-provisioned disk images that run in virtualized environments, usually cloud-oriented services. You use it to add SSH keys, set hostnames, run post-install scripts or install provisioning agents (like Chef or Puppet).</p>
+<p>这里可以控制resolv.conf和hostname，也是我们重要修改的地方。这里修改了，才能让hostname固定下来。<br>
+实测后发现,resolv.conf的修改在这里修改是存在bug的。如果想了解cloud init可以控制的内容，可以参考一下local doc里面看一下。</p>
+<p>我自己理解了一下，但是可能是错的。就不说了。</p>
+<p>3: NetworkManager<br>
+默认的RHEL/Centos的网络管理器。</p>
+<p>4: DHCP(dhclient)<br>
+最后dhcp client的执行层面。</p>
+<p>说明，整体影响因素是 1 -&gt; 2 -&gt; 3 -&gt; 4 , 从前到后，最后的具有决定性。但是中间的前面的配置影响后面的配置。</p>
+<p>最后可以实现我的方法:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#### hostname</span></span><br><span class="line">hostnamectl <span class="built_in">set</span>-hostname --static kookliu.jia.com</span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"preserve_hostname: true"</span> &gt;&gt; /etc/cloud/cloud.cfg</span><br><span class="line"></span><br><span class="line"><span class="comment">#### dns</span></span><br><span class="line"></span><br><span class="line">cat &gt; /etc/dhcp/dhclient.conf &lt;&lt; EOF</span><br><span class="line">prepend domain-name-servers 114.114.114.114, 8.8.8.8;</span><br><span class="line">supersede domain-search <span class="string">"jia.com"</span>;</span><br><span class="line">EOF</span><br></pre></td></tr></table></figure>
       
     </div>
     <div class="article-footer">
@@ -380,7 +384,7 @@
     
     <li class="post-copyright-link hidden-xs">
       <strong>本文链接：</strong>
-      <a href="http://blog.jiazhe.space/2019/05/24/How to get the AMI ID in batch by region/" title="如何以Region来批处理获取AMI ID？" target="_blank" rel="external">http://blog.jiazhe.space/2019/05/24/How to get the AMI ID in batch by region/</a>
+      <a href="http://blog.jiazhe.space/2019/10/26/How-to-properly-set-your-own-hostname-and-DNS-on-AWS/" title="如何在AWS上为RHEL或CentOS设定固定的主机名和域名？" target="_blank" rel="external">http://blog.jiazhe.space/2019/10/26/How-to-properly-set-your-own-hostname-and-DNS-on-AWS/</a>
     </li>
     
     
@@ -427,13 +431,9 @@
   
   <ul class="pager pull-left">
     
-    <li class="prev">
-      <a href="/2019/06/05/How-to-access-s3-endpoint-from-private-subent/" title="如何在Private Subnet下使用S3 Endpoint?"><i class="icon icon-angle-left" aria-hidden="true"></i><span>&nbsp;&nbsp;Newer</span></a>
-    </li>
-    
     
     <li class="next">
-      <a href="/2019/05/22/CloudFormation - How to get AMI ID/" title="CloudFormation -  如何获取AWS的AMI ID？"><span>Older&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
+      <a href="/2019/06/06/Preliminary-study-aws-storage-gateway/" title="AWS Storage Gateway 初探"><span>Older&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
     </li>
     
     
@@ -578,7 +578,7 @@ var gitment = new Gitment({
   // id默认为当前页面url，如果url后带参数或锚点，gitment要重新初始化
   // https://github.com/imsun/gitment/issues/55
   // 解决方案：id:window.location.pathname,或者将id设置为当前页面标题
-  id: '如何以Region来批处理获取AMI ID？', 
+  id: '如何在AWS上为RHEL或CentOS设定固定的主机名和域名？', 
   owner: 'kookliu', // 可以是你的GitHub用户名，也可以是github id
   repo: 'kookliu.github.io',
   oauth: {
