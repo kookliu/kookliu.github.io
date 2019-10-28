@@ -19,18 +19,18 @@
   <meta name="google-site-verification" content="LrwD62uNl-hBIAWd4hlzKeN4WR51HNulZihO_EL3A_A" />
   
   
-  <title>如何在AWS上为RHEL或CentOS设定固定的主机名和域名？ | Hexo</title>
+  <title>如何在AWS上为RHEL或CentOS设定固定的主机名和域名服务器？ | Hexo</title>
   <meta name="description" content="参考文档: https://amazonaws-china.com/cn/premiumsupport/knowledge-center/ec2-static-dns-ubuntu-debian/ https://amazonaws-china.com/cn/premiumsupport/knowledge-center/linux-static-hostname-rhel7-centos7/ 起">
 <meta name="keywords" content="AWS">
 <meta property="og:type" content="article">
-<meta property="og:title" content="如何在AWS上为RHEL或CentOS设定固定的主机名和域名？">
+<meta property="og:title" content="如何在AWS上为RHEL或CentOS设定固定的主机名和域名服务器？">
 <meta property="og:url" content="http://blog.jiazhe.space/2019/10/26/How-to-properly-set-your-own-hostname-and-DNS-on-AWS/index.html">
 <meta property="og:site_name" content="JIA&#39;s BLOG">
 <meta property="og:description" content="参考文档: https://amazonaws-china.com/cn/premiumsupport/knowledge-center/ec2-static-dns-ubuntu-debian/ https://amazonaws-china.com/cn/premiumsupport/knowledge-center/linux-static-hostname-rhel7-centos7/ 起">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-10-26T15:08:31.594Z">
+<meta property="og:updated_time" content="2019-10-28T10:22:55.606Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="如何在AWS上为RHEL或CentOS设定固定的主机名和域名？">
+<meta name="twitter:title" content="如何在AWS上为RHEL或CentOS设定固定的主机名和域名服务器？">
 <meta name="twitter:description" content="参考文档: https://amazonaws-china.com/cn/premiumsupport/knowledge-center/ec2-static-dns-ubuntu-debian/ https://amazonaws-china.com/cn/premiumsupport/knowledge-center/linux-static-hostname-rhel7-centos7/ 起">
   <!-- Canonical links -->
   <link rel="canonical" href="http://blog.jiazhe.space/2019/10/26/How-to-properly-set-your-own-hostname-and-DNS-on-AWS/index.html">
@@ -232,7 +232,7 @@
                 
               </p>
               <p class="item-title">
-                <a href="/2019/10/26/How-to-properly-set-your-own-hostname-and-DNS-on-AWS/" class="title">如何在AWS上为RHEL或CentOS设定固定的主机名和域名？</a>
+                <a href="/2019/10/26/How-to-properly-set-your-own-hostname-and-DNS-on-AWS/" class="title">如何在AWS上为RHEL或CentOS设定固定的主机名和域名服务器？</a>
               </p>
               <p class="item-date">
                 <time datetime="2019-10-26T14:31:01.000Z" itemprop="datePublished">2019-10-26</time>
@@ -320,7 +320,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      如何在AWS上为RHEL或CentOS设定固定的主机名和域名？
+      如何在AWS上为RHEL或CentOS设定固定的主机名和域名服务器？
     </h1>
   
 
@@ -392,7 +392,15 @@ systemctl restart network</p>
 <p>DNS修改(存在bug,没个卵用)</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">[root@ip-10-0-102-198 ~]<span class="comment"># cat /usr/share/doc/cloud-init/examples/cloud-config-resolv-conf.txt</span></span><br><span class="line"><span class="comment">#cloud-config</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># This is an example file to automatically configure resolv.conf when the</span></span><br><span class="line"><span class="comment"># instance boots for the first time.</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># Ensure that your yaml is valid and pass this as user-data when starting</span></span><br><span class="line"><span class="comment"># the instance. Also be sure that your cloud.cfg file includes this</span></span><br><span class="line"><span class="comment"># configuration module in the appropriate section.</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line">manage_resolv_conf: <span class="literal">true</span></span><br><span class="line"></span><br><span class="line">resolv_conf:</span><br><span class="line">  nameservers: [<span class="string">'8.8.4.4'</span>, <span class="string">'8.8.8.8'</span>]</span><br><span class="line">  searchdomains:</span><br><span class="line">    - foo.example.com</span><br><span class="line">    - bar.example.com</span><br><span class="line">  domain: example.com</span><br><span class="line">  options:</span><br><span class="line">    rotate: <span class="literal">true</span></span><br><span class="line">    timeout: 1</span><br><span class="line">[root@ip-10-0-102-198 ~]<span class="comment"># ls /etc/cloud/</span></span><br><span class="line">cloud.cfg    cloud.cfg.d/ templates/</span><br><span class="line">[root@ip-10-0-102-198 ~]<span class="comment"># ls /etc/cloud/cloud.cfg.d/</span></span><br><span class="line">05_logging.cfg  99-datasource.cfg  README</span><br><span class="line">[root@ip-10-0-102-198 ~]<span class="comment"># cat /usr/share/doc/cloud-init/examples/cloud-config-resolv-conf.txt &gt;&gt; 90_dns.cfg</span></span><br></pre></td></tr></table></figure>
 <p>花了很长时间debug这个问题。没有结果。</p>
-
+<p>2019年10月28日，哈哈！<br>
+为啥我要继续写呢？因为发现这事没有搞定。为啥没有搞定。严格说起来，不是我的问题。<br>
+虽然我成功设定了DNS，但是发现我们这个为Openshift准备好的安装环境，并没有完全满足到它。</p>
+<p>在执行安装过程中，Openshfit在NetworkManager里面创建了一个文件：/etc/NetworkManager/dispatcher.d/99-origin-dns.sh<br>
+这玩意注入后，实际上是通过读取/etc/sysconfig/network-scripts/ifcfg-eth0里面读取DNS1/DNS2等信息进行二次配置的。<br>
+而我们并没有通过这个地方配置的。这个场景仅仅在云DHCP环境下出现。</p>
+<p>关于99-origin-dns.sh这个文件原理，我就不赘述了。这个事真是有意思。</p>
+<p>最后做法是这样的：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">cat &gt; /etc/cloud/cloud.cfg.d/90_network.cfg  &lt;&lt; EOF</span><br><span class="line">network:</span><br><span class="line">  version: 1</span><br><span class="line">  config: disabled</span><br><span class="line">EOF</span><br><span class="line"></span><br><span class="line">cat &gt;&gt; /etc/sysconfig/network-scripts/ifcfg-eth0 &lt;&lt;TOF</span><br><span class="line">PEERDNS=no</span><br><span class="line">DNS1=8.8.8.8</span><br><span class="line">DNS2=8.8.4.4</span><br><span class="line">TOF</span><br><span class="line"></span><br><span class="line">systemctl restart network</span><br></pre></td></tr></table></figure>
       
     </div>
     <div class="article-footer">
@@ -401,7 +409,7 @@ systemctl restart network</p>
     
     <li class="post-copyright-link hidden-xs">
       <strong>本文链接：</strong>
-      <a href="http://blog.jiazhe.space/2019/10/26/How-to-properly-set-your-own-hostname-and-DNS-on-AWS/" title="如何在AWS上为RHEL或CentOS设定固定的主机名和域名？" target="_blank" rel="external">http://blog.jiazhe.space/2019/10/26/How-to-properly-set-your-own-hostname-and-DNS-on-AWS/</a>
+      <a href="http://blog.jiazhe.space/2019/10/26/How-to-properly-set-your-own-hostname-and-DNS-on-AWS/" title="如何在AWS上为RHEL或CentOS设定固定的主机名和域名服务器？" target="_blank" rel="external">http://blog.jiazhe.space/2019/10/26/How-to-properly-set-your-own-hostname-and-DNS-on-AWS/</a>
     </li>
     
     
@@ -595,7 +603,7 @@ var gitment = new Gitment({
   // id默认为当前页面url，如果url后带参数或锚点，gitment要重新初始化
   // https://github.com/imsun/gitment/issues/55
   // 解决方案：id:window.location.pathname,或者将id设置为当前页面标题
-  id: '如何在AWS上为RHEL或CentOS设定固定的主机名和域名？', 
+  id: '如何在AWS上为RHEL或CentOS设定固定的主机名和域名服务器？', 
   owner: 'kookliu', // 可以是你的GitHub用户名，也可以是github id
   repo: 'kookliu.github.io',
   oauth: {
